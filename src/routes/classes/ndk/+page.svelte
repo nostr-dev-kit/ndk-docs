@@ -1,6 +1,6 @@
 <script lang="ts">
     import TableOfContents from '$lib/components/TableOfContents.svelte';
-    import MarkdownContent from './ndkUser.svx';
+    import MarkdownContent from '../ndkUser/+page.svelte';
 
     let tableOfContents: App.NavLink[] = [
         {
