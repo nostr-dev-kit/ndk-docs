@@ -6,6 +6,13 @@ This is the repository for the documentation that ~~lives~~ will live at [ndk.fy
 
 NDK (Nostr Development Kit) is a tool kit for building Nostr apps. It abstracts much of the complexity away and is built to help maintain and encourage Nostr's decentralized nature.
 
+## Running the app locally
+
+1. Clone this repo `git clone git@github.com:nostr-dev-kit/ndk-docs.git`
+1. Change into the directory `cd ndk-docs`
+1. Install dependencies `npm i`
+1. Run the server `npm run dev`
+
 ## Contributing
 
 ### A few caveats
