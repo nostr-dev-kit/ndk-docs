@@ -1,6 +1,6 @@
 # NDK Docs
 
-This is the repository for the documentation that lives at [ndk.fyi](https://ndk.fyi).
+This is the repository for the documentation that ~~lives~~ will live at [ndk.fyi](https://ndk.fyi).
 
 ## What is NDK?
 
