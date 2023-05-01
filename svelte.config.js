@@ -3,6 +3,8 @@ import adapter from '@sveltejs/adapter-static';
 import { mdsvex } from 'mdsvex';
 import mdsvexConfig from './mdsvex.config.js';
 
+const dev = process.argv.includes('dev');
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
     extensions: ['.svelte', ...mdsvexConfig.extensions],
@@ -13,7 +15,10 @@ const config = {
             pages: 'build',
             assets: 'build',
             fallback: null
-        })
+        }),
+        paths: {
+            base: dev ? '' : process.env.BASE_PATH
+        }
     }
 };
 
