@@ -26,11 +26,11 @@ a {
 }
 
 .contentWrapper {
-    @apply prose prose-lg dark:prose-invert;
+    @apply prose 2xl:prose-lg dark:prose-invert;
 }
 
 .tableOfContentsLink {
-    @apply px-2 py-1 hover:bg-zinc-200/10 rounded-md cursor-pointer hover:text-white;
+    @apply px-2 py-1 hover:bg-zinc-200/10 rounded-md cursor-pointer hover:text-white text-sm;
 }
 
 .tableOfContentsLink.active {

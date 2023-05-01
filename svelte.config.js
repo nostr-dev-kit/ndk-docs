@@ -15,7 +15,6 @@ const config = {
             pages: 'build',
             assets: 'build',
             fallback: 'index.html'
-            // strict: false
         }),
         paths: {
             base: dev ? '' : process.env.BASE_PATH
