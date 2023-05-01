@@ -9,7 +9,10 @@
         { title: 'Features', url: '#features' },
         { title: 'Instantiate an NDK Instance', url: '#instantiate-an-ndk-instance' },
         { title: 'Connecting', url: '#connecting' },
-        { title: 'Signers', url: '#signers', sublinks: [{title: "NIP-07 browser extensions", url: "#nip-07-browser-extensions"}] },
+        { title: 'Signers', url: '#signers', sublinks: [
+            {title: "NIP-07 browser extensions", url: "#nip-07-browser-extensions"},
+            {title: "NIP-46 remote signing", url: "#nip-46-remote-signing"}
+        ] },
         { title: 'Caching', url: '#caching', sublinks: [{title: "Using a cache adapter", url: "#using-a-cache-adapter"}] },
         { title: 'Buffered Queries', url: '#buffered-queries' },
         { title: 'Intelligent Relay Selection', url: '#intelligent-relay-selection' },
@@ -165,7 +168,7 @@ ndkEvent.content = "Hello, world!";
 ndkEvent.publish(); // This will trigger the extension to ask the user to confirm signing.
 ```
 
-<!-- <SectionHeader title="Signing events via NIP-46" subheader={true} />
+<SectionHeader title="NIP-46 remote signing" subheader={true} />
 
 ```ts
 const signingAdapter = new NDK.RemoteSignerAdapter();
@@ -174,7 +177,7 @@ const event = ndk.event();
 event.kind = 0;
 event.content = "This event is signed via NIP-46.";
 await event.publish();
-``` -->
+```
 
 <SectionHeader title="Caching" />
 
