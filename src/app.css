@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+    @apply hover:text-zinc-600 dark:hover:text-zinc-400;
+}
+
+.markdownContent > h2 > a {
+    @apply no-underline;
+}
+
+.nav > li > a {
+    @apply block mb-1 hover:bg-zinc-200 dark:hover:bg-zinc-200/10 px-2 py-1 rounded-md no-underline text-zinc-500 hover:text-zinc-900 dark:text-zinc-300 hover:dark:text-zinc-100 transition-all;
+}
+
+.nav > li > a.active {
+    @apply bg-zinc-200 dark:bg-zinc-200/10;
+}
+
+.gradientText {
+    @apply bg-clip-text tracking-tight text-transparent bg-gradient-to-r
+        from-violet-950 via-purple-500 to-indigo-700
+        dark:from-violet-600 dark:via-purple-300 dark:to-purple-500
+        pb-1 mb-4 text-3xl md:text-5xl max-w-xl;
+}
+
+.contentWrapper {
+    @apply prose prose-lg dark:prose-invert;
+}
+
+.tableOfContentsLink {
+    @apply px-2 py-1 hover:bg-zinc-200/10 rounded-md cursor-pointer hover:text-white;
+}
+
+.tableOfContentsLink.active {
+    @apply bg-zinc-200/5 hover:bg-zinc-200/10;
+}
+
+.a {
+    @apply transition-all;
+}
