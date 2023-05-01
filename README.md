@@ -17,27 +17,36 @@ NDK (Nostr Development Kit) is a tool kit for building Nostr apps. It abstracts 
 ### What can you do?
 
 1. First and foremost we need to get a v1 in place. There are _sort of_ docs [here](https://github.com/nostr-dev-kit/ndk/tree/master/docs). They are auto-generated and thus, cannot be trusted.
-1. We need build out docs pages for all the major [classes](https://github.com/nostr-dev-kit/ndk/tree/master/docs/classes), [enums](https://github.com/nostr-dev-kit/ndk/tree/master/docs/enums), and [interfaces](https://github.com/nostr-dev-kit/ndk/tree/master/docs/interfaces) in NDK.
+1. We need to build out docs pages for all the major [classes](https://github.com/nostr-dev-kit/ndk/tree/master/docs/classes), [enums](https://github.com/nostr-dev-kit/ndk/tree/master/docs/enums), and [interfaces](https://github.com/nostr-dev-kit/ndk/tree/master/docs/interfaces) in NDK.
 
 ### How to create/edit pages
 
-Svelte page routing is dependent on the folder structure of the projects. Any folder under the `/src/routes/` directory will generate a route and Svelte will look for a `+page.svelte` file in each of those directories to know what to render.
+Svelte page routing is dependent on folder structure. Any folder under the `/src/routes/` directory will generate a route and Svelte will look for a `+page.svelte` file in each of those directories to know what to render.
 
-There is a reference page for NDKEvent in this repo already `/src/routes/classes/ndkEvent/`. Pages are broken into two different files.
+There is a reference page for `NDKEvent` in this repo already `/src/routes/classes/ndkEvent/`. Pages are generated from two different files.
 
 1. `+page.svelte` file is where you define the table of contents links. You'll need to update three things for new pages.
-    1. The filename of the `.svx` file. e.g. From `ndkEvent.svx` to `ndkUserProfile.svx`
-    1. The import statement. e.g. if you copy `+page.svelte` and `ndkEvent.svx` from `/src/routes/ndkEvent/` to a new directory at `/src/routes/ndkUserProfile`, you'll need to change `import MarkdownContent from './ndkEvent.svx';` to `import MarkdownContent from './ndkUserProfile.svx';`
-    1. The `tableOfContents` variable. This variable generates the secondary nav on the right side of the page.
-1. `ndk<NDKClassName>.svx` file is a hybrid Svelte + Markdown file where the main page contents live. Aside from copying/writing the content for the page in markdown, you'll need to make sure `h2` and `h3` headings are set correctly so that the secondary nav works properly.
 
-    1. You'll notice that these files start by importing a single `SectionHeader` component. You don't need to do anything with the import.
-    2. `h2` and `h3` headers in the .svx file should be declared with this component instead of using the standard markdown `##` and `###` prefixes. NB: Use Markdown for the single `h1` page title at the top of the page.
+    1. The filename of the `.svx` file. e.g. From `ndkEvent.svx` to `ndkUserProfile.svx`
+    1. The import statement. e.g. if you copy `+page.svelte` and `ndkEvent.svx` from `/src/routes/ndkEvent/` to a new directory at `/src/routes/ndkUserProfile`, you'll need to change:
 
     ```js
-    // For h1 page title
-    # Page title
+    import MarkdownContent from './ndkEvent.svx';
+    ```
 
+    to
+
+    ```js
+    import MarkdownContent from './ndkUserProfile.svx';
+    ```
+
+    1. The `tableOfContents` variable. This variable generates the secondary nav on the right side of the page. The values should be formatted based on the section titles on the page (see more on the `SectionHeader` component below). e.g. If you have an `h2` section header on the page called "Create a user", the `tableOfContents` variable should be `{title: "Create a user", url: "#create-a-user"}`.
+
+1. `ndk<NDKClassName>.svx` file is a hybrid Svelte + Markdown file where the main page contents live. Aside from copying/writing the content for the page in markdown, you'll need to make sure `h2` and `h3` headings are set correctly so that the secondary nav works properly.
+
+    1. `h2` and `h3` headers in the `.svx` file should be declared with this component instead of using the standard markdown `##` and `###` prefixes. NB: Use Markdown (`#`) for the single `h1` page title at the top of the page.
+
+    ```svelte
     // For h2 headers
     <SectionHeader title="The section title" />
 
