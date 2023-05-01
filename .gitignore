@@ -1,6 +1,6 @@
 .DS_Store
 node_modules
-#/build #needs to be visible for gh-pages
+/build
 /.svelte-kit
 /package
 .env
