@@ -1,6 +1,7 @@
 <script lang="ts">
     import DonateButton from '$lib/components/DonateButton.svelte';
     import NavLink from '$lib/components/NavLink.svelte';
+    import { base } from '$app/paths';
 
     const navLinks = {
         classes: [
@@ -14,7 +15,7 @@
     };
 </script>
 
-<a href="/" class="hidden md:flex flex-row gap-6 items-center text-3xl ml-4 no-underline">
+<a href="{base}/" class="hidden md:flex flex-row gap-6 items-center text-3xl ml-4 no-underline">
     <!-- <span class="font-extrabold leading-tight gradientText">Nostr Dev Kit</span> -->
     <div class="w-1/2 text-3xl font-extrabold leading-none">
         <span class="text-[#6d0593]">N</span>ostr<br />Dev<br />Kit
@@ -59,12 +60,12 @@
     <div class="colophon text-zinc-500 dark:text-zinc-400 mt-4 text-sm text-center px-8">
         <div>Made with 💜 & ⚡ by</div>
         <a
-            href="https://snort.social/p/npub1l2vyh47mk2p0qlsku7hg0vn29faehy9hy34ygaclpn66ukqp3afqutajft"
+            href="https://primal.net/pablof7z"
             target="_blank"
             class="underline hover:text-zinc-600 dark:hover:text-zinc-200">PABLOF7z</a
         >,
         <a
-            href="https://snort.social/p/npub1zuuajd7u3sx8xu92yav9jwxpr839cs0kc3q6t56vd5u9q033xmhsk6c2uc"
+            href="https://primal.net/jeffg"
             target="_blank"
             class="underline hover:text-zinc-600 dark:hover:text-zinc-200">JeffG</a
         >, and

@@ -3,6 +3,7 @@
     import GithubIcon from '$lib/elements/icons/Github.svelte';
     import MenuIcon from '$lib/elements/icons/Menu.svelte';
     import { sidebarVisible } from '$lib/stores';
+    import { base } from '$app/paths';
 </script>
 
 <div
@@ -16,7 +17,7 @@
     <button on:click={() => sidebarVisible.set(!$sidebarVisible)} class="block md:hidden">
         <MenuIcon />
     </button>
-    <a href="/" class="md:hidden flex flex-row gap-2 items-center text-2xl no-underline">
+    <a href="{base}/" class="md:hidden flex flex-row gap-2 items-center text-2xl no-underline">
         <span class="font-extrabold leading-tight">NDK</span>
     </a>
     <a href="https://github.com/nostr-dev-kit/ndk" target="_blank" class="w-6 h-6">
