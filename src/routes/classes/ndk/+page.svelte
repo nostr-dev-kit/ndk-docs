@@ -7,11 +7,27 @@
             title: 'Properties',
             url: '#properties',
             sublinks: [
-                { title: 'content', url: '#content' },
-                { title: 'created_at', url: '#created_at' }
+                { title: 'cacheAdapter', url: '#cacheAdapter' },
+                { title: 'debug', url: '#debug' },
+                { title: 'explicitRelayUrls', url: '#explicitRelayUrls' },
+                { title: 'pool', url: '#pool' },
+                { title: 'signer', url: '#signer' }
             ]
         },
-        { title: 'Methods', url: '#methods' }
+        {
+            title: 'Methods',
+            url: '#methods',
+            sublinks: [
+                { title: 'constructor', url: '#constructor' },
+                { title: 'assertSigner', url: '#assertSigner' },
+                { title: 'connect', url: '#connect' },
+                { title: 'fetchEvent', url: '#fetchEvent' },
+                { title: 'fetchEvents', url: '#fetchEvents' },
+                { title: 'getUser', url: '#getUser' },
+                { title: 'publish', url: '#publish' },
+                { title: 'subscribe', url: '#subscribe' }
+            ]
+        }
     ];
 </script>
 

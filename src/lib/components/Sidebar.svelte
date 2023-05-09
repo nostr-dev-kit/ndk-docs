@@ -10,7 +10,10 @@
             { href: '/classes/ndkUser', linkText: 'NDKUser' },
             { href: '/classes/ndkUserProfile', linkText: 'NDKUserProfile' }
         ],
-        guides: [{ href: '/', linkText: 'Getting started' }],
+        guides: [
+            { href: '/', linkText: 'Getting started' },
+            { href: '/guides/common-patterns', linkText: 'Common patterns' }
+        ],
         pages: [{ href: 'https://nostr.how', linkText: 'What is Nostr?' }]
     };
 </script>

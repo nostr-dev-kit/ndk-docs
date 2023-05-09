@@ -4,7 +4,7 @@
     export let title: string;
     export let subheader: boolean = false;
 
-    const stringified: string = title.split(' ').join('-').toLowerCase();
+    const stringified: string = title.split(' ').join('-');
 </script>
 
 {#if subheader}

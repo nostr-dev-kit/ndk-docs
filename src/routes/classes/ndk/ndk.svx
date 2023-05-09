@@ -3,3 +3,220 @@
 </script>
 
 # NDK
+
+This is the default NDK class. Usually you should instantiate a single NDK instance in your app. This instance will track the state of all relays connected, explicity and otherwise.
+
+<SectionHeader title="Properties" />
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `cacheAdapter` | an instance of NDKCacheAdapter | `NDKCacheAdapter` | `Optional` |
+| `debug` | an instance of Debugger | `Debugger` | `Optional` |
+| `explicitRelayUrls` | an instance of NDKCacheAdapter | `string[]` | `Optional` |
+| `pool` | an instance of NDKPool | `NDKPool` | `Optional` |
+| `signer` | an instance of NDKSigner | `NDKSigner` | `Optional` |
+
+<SectionHeader title="cacheAdapter" subheader={true} />
+
+Optional: An instance of NDKCacheAdapter. NDKCacheAdapters help you cache Nostr data using different strategies.
+
+<SectionHeader title="debug" subheader={true} />
+
+Optional: Pass in your own instance of Debugger.
+
+<SectionHeader title="explicitRelayUrls" subheader={true} />
+
+Optional: An array of relay URLs as strings. These are the relays that NDK will attempt to connect to.
+
+<SectionHeader title="pool" subheader={true} />
+
+Optional: An instnace of NDKPool, this is the pool of relay connections that NDK uses when fetching data.
+
+<SectionHeader title="signer" subheader={true} />
+
+Optional: An instance of NDKSigner, this is the signer strategy that will be used when attempting to sign events.
+
+
+## Methods
+
+<SectionHeader title="constructor" subheader={true} />
+
+Create a new NDK instance:
+
+```js
+let ndk = new NDK(NDKConstructorParams);
+```
+
+#### Parameters
+
+`NDKConstructorParams` is an object with the following properties:
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `cacheAdapter` | an instance of NDKCacheAdapter | `NDKCacheAdapter` | `Optional` |
+| `debug` | an instance of Debugger | `Debugger` | `Optional` |
+| `explicitRelayUrls` | an instance of NDKCacheAdapter | `string[]` | `Optional` |
+| `signer` | an instance of NDKSigner | `NDKSigner` | `Optional` |
+
+
+<SectionHeader title="assertSigner" subheader={true} />
+
+Ensures that a signer is available to sign an event. Will emit/throw an error if a signer is required for the action being performed.
+
+#### Returns
+
+`Promise<void>`
+
+<SectionHeader title="connect" subheader={true} />
+
+Connect to relays with an optional timeout.
+
+⚡ _If you instantiate NDK as a singleton instance in your app you only need to call `connect()` one time._
+
+```js
+let ndk = new NDK({explicitRelayUrls: ["https://relay.damus.io"]});
+// Attmpt to connect to specified relay(s)
+ndk.connect();
+// Or with a timeout value
+ndk.connect(2000);
+```
+
+#### Parameters
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `timeoutMs` | A timeout in milliseconds | number | `Optional` |
+
+#### Returns
+
+`Promise<void>`
+
+<SectionHeader title="fetchEvent" subheader={true} />
+
+Fetch a single event matching a set of filters. This will return the first event returned by the relays you're connected to.
+
+```js
+// ndk already instantiated and connected
+// ndk.fetchEvent(filter: NDKFilter, opts: NDKFilterOptions)
+
+let jeffProfile = await ndk.fetchEvent({kinds: [0], authors: ['1739d937dc8c0c7370aa27585938c119e25c41f6c441a5d34c6d38503e3136ef'] })
+```
+
+#### Parameters
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `filter` | An instance of NDKFilter | NDKFilter | `Required` |
+| `opts` | An instance of NDKFilterOptions | NDKFilterOptions | `Optional` |
+
+
+#### Returns
+
+`Promise<NDKEvent>`
+
+<SectionHeader title="fetchEvents" subheader={true} />
+
+Fetch all events matching a set of filters.
+
+```js
+// ndk already instantiated and connected
+// ndk.fetchEvent(filter: NDKFilter, opts: NDKFilterOptions)
+
+let jeffNotes = await ndk.fetchEvents({kinds: [1], authors: ['1739d937dc8c0c7370aa27585938c119e25c41f6c441a5d34c6d38503e3136ef'] })
+```
+
+#### Parameters
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `filter` | An instance of NDKFilter | NDKFilter | `Required` |
+| `opts` | An instance of NDKFilterOptions | NDKFilterOptions | `Optional` |
+
+
+#### Returns
+
+`Promise<Set<NDKEvent>>`
+
+<SectionHeader title="getUser" subheader={true} />
+
+Instantiates an instance of NDKUser. You don't need to be connected to relays to run this method as it's only instantiating an NDKUser object, not fetching any profile events.
+
+```js
+// ndk already instantiated
+// ndk.getUser(opts: NDKUserParams)
+
+// Instantiate with npub
+let jeff = ndk.getUser({npub: 'npub1zuuajd7u3sx8xu92yav9jwxpr839cs0kc3q6t56vd5u9q033xmhsk6c2uc'})
+
+// Instantiate with pubkey
+let jeff = ndk.getUser({hexpubkey: '1739d937dc8c0c7370aa27585938c119e25c41f6c441a5d34c6d38503e3136ef'})
+```
+
+#### Parameters
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `opts` | An instance of NDKUserParams | NDKUserParams | `Required` |
+
+
+#### Returns
+
+`NDKUser`
+
+<SectionHeader title="publish" subheader={true} />
+
+Publishes an event to connected relays.
+
+```js
+// ndk already instantiated & connected
+// ndk.publish(event: NDKEvent)
+
+// Build an NDKEvent
+let event = new NDKEvent({
+        kind: 1,
+        created_at:  Date.now(),
+        content: 'gm 🤙',
+        pubkey: '1739d937dc8c0c7370aa27585938c119e25c41f6c441a5d34c6d38503e3136ef'
+    });
+
+// Publish the event.
+// If NDK was instantiated with an NDKSigner, NDK
+// will attempt to use that signer to sign the event
+ndk.publish(event);
+
+```
+
+#### Parameters
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `event` | An NDKEvent instance | NDKEvent | `Required` |
+
+
+#### Returns
+
+`Promise<void>`
+
+<SectionHeader title="subscribe" subheader={true} />
+
+Opens a persistent connection to relays for a specific type of event(s).
+
+```js
+// ndk already instantiated & connected
+// ndk.subscribe(filter: NDKFilter, opts: NDKFilterOpts)
+
+// Opens a persistent connection listening for kind 1 notes from Jeff
+let jeffNotesSub = ndk.subscribe({kinds: [1], authors: ['1739d937dc8c0c7370aa27585938c119e25c41f6c441a5d34c6d38503e3136ef'] })
+```
+
+#### Parameters
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `filter` | An instance of NDKFilter | NDKFilter | `Required` |
+| `opts` | An instance of NDKFilterOptions | NDKFilterOptions | `Optional` |
+
+
+#### Returns
+
+`NDKSubscription`

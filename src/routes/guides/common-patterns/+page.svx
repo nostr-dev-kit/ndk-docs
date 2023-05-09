@@ -1,0 +1,91 @@
+<script lang="ts">
+import SectionHeader from '$lib/components/SectionHeader.svelte'
+import TableOfContents from '$lib/components/TableOfContents.svelte'
+
+let tableOfContents: App.NavLink[] = [
+    { title: "Instantiate a user", url: "#Instantiate-a-user" },
+    { title: "Fetch a user profile", url: "#Fetch-a-user-profile" },
+    { title: "Find an event or all events", url: "#Find-an-event-or-all-events" },
+    { title: "Create & publish events", url: "#Create-&-publish-events" },
+    { title: "React to an event", url: "#React-to-an-event" },
+    { title: "Zap an event", url: "#Zap-an-event" }
+];
+</script>
+
+<div class="contentWrapper">
+<h1 class="gradientText">Common patterns</h1>
+
+A lot of Nostr development revolves around fetching users & events and interacting with those objects. NDK implements several conveience methods for common queries that make your life easier.
+
+<SectionHeader title="Instantiate a user" />
+
+This is a handy method for instantiating a new `NDKUser` and associating the current NDK instance with that user for future calls.
+
+```ts
+const pablo = ndk.getUser({
+    npub: "npub1l2vyh47mk2p0qlsku7hg0vn29faehy9hy34ygaclpn66ukqp3afqutajft"
+});
+
+const jeff = ndk.getUser({
+    hexpubkey: "1739d937dc8c0c7370aa27585938c119e25c41f6c441a5d34c6d38503e3136ef"
+});
+```
+<SectionHeader title="Fetch a user profile" />
+
+You can easily fetch a user's profile data from `kind: 0` events on relays. Calling `.fetchProfile()` will update the `profile` attribute on the user object instead of returning the profile directly. NDK then makes it trivial to update values and publish those updates back to relays.
+
+```ts
+const pablo = ndk.getUser({
+    npub: "npub1l2vyh47mk2p0qlsku7hg0vn29faehy9hy34ygaclpn66ukqp3afqutajft"
+});
+await pablo.fetchProfile();
+
+const pabloFullProfile = pablo.profile;
+
+pablo.profile.name = "Pablo";
+// COMING SOON
+await pablo.publish(); // Triggers signing via signer
+```
+<SectionHeader title="Find an event or all events" />
+
+You can fetch the first event or all events that match a given set of filters.
+
+```ts
+// Create a filter
+const filter: NDKFilter = { kinds: [1], authors: [hexpubkey1, hexpubkey2] };
+
+// Will return only the first event
+event = await ndk.fetchEvent(filter);
+
+// Will return all found events
+events = await ndk.fetchEvents(filter);
+```
+
+<SectionHeader title="Create & publish events" />
+
+```ts
+const ndk = new NDK({ explicitRelays, signer });
+const event = new NDKEvent(ndk);
+event.kind = 1;
+event.content = "PV Nostr! 🤙🏼";
+await ndk.publish(event);
+```
+<SectionHeader title="React to an event" />
+
+```ts
+// Find the first event from @jack, and react/like it.
+const event = await ndk.fetchEvent({ author: "jack@cashapp.com" })[0];
+await event.react("🤙");
+```
+
+<SectionHeader title="Zap an event" />
+
+```ts
+// Find the first event from @jack, and zap it.
+const event = await ndk.fetchEvent({ author: "jack@cashapp.com" })[0];
+await event.zap(1337, "Zapping your post!"); // Returns a zap request
+```
+
+</div>
+
+<TableOfContents links={tableOfContents} />

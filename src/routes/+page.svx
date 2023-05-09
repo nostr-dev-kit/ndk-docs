@@ -3,29 +3,20 @@
     import TableOfContents from '$lib/components/TableOfContents.svelte'
 
     let tableOfContents: App.NavLink[] = [
-        { title: 'Installation', url: '#installation' },
-        { title: 'Debugging', url: '#debugging' },
-        { title: 'Support', url: '#support', sublinks: [{title: "NDK NIP-28 group chat", url: "#ndk-nip-28-group-chat"}] },
-        { title: 'Features', url: '#features' },
-        { title: 'Instantiate an NDK Instance', url: '#instantiate-an-ndk-instance' },
-        { title: 'Connecting', url: '#connecting' },
-        { title: 'Signers', url: '#signers', sublinks: [
-            {title: "NIP-07 browser extensions", url: "#nip-07-browser-extensions"},
-            {title: "NIP-46 remote signing", url: "#nip-46-remote-signing"}
+        { title: 'Installation', url: '#Installation' },
+        { title: 'Debugging', url: '#Debugging' },
+        { title: 'Support', url: '#Support', sublinks: [{title: "NDK NIP-28 Group Chat", url: "#NDK-NIP-28-Group-Chat"}] },
+        { title: 'Instantiate an NDK instance', url: '#Instantiate-an-NDK-Instance' },
+        { title: 'Connecting', url: '#Connecting' },
+        { title: 'Signers', url: '#Signers', sublinks: [
+            {title: "NIP-07 Browser Extensions", url: "#NIP-07-Browser-Extensions"},
+            {title: "NIP-46 Remote Signing", url: "#NIP-46-Remote-Signing"}
         ] },
-        { title: 'Caching', url: '#caching', sublinks: [{title: "Using a cache adapter", url: "#using-a-cache-adapter"}] },
-        { title: 'Buffered Queries', url: '#buffered-queries' },
-        { title: 'Intelligent Relay Selection', url: '#intelligent-relay-selection' },
-        { title: 'Subscription Management', url: '#subscription-management' },
-        { title: 'Convenience Methods', url: '#convenience-methods', sublinks: [
-            { title: "Instantiate a user", url: "#instantiate-a-user" },
-            { title: "Fetch a user profile", url: "#fetch-a-user-profile" },
-            { title: "Find an event or all events", url: "#find-an-event-or-all-events" },
-            { title: "Create & publish events", url: "#create-&-publish-events" },
-            { title: "React to an event", url: "#react-to-an-event" },
-            { title: "Zap an event", url: "#zap-an-event" },
-        ] },
-        { title: 'Architecture Decisions', url: '#architecture-decisions' },
+        { title: 'Caching', url: '#Caching', sublinks: [{title: "Using a Cache Adapter", url: "#Using-a-Cache-Adapter"}] },
+        { title: 'Buffered Queries', url: '#Buffered-Queries' },
+        { title: 'Intelligent Relay Selection', url: '#Intelligent-Relay-Selection' },
+        { title: 'Subscription Management', url: '#Subscription-Management' },
+        { title: 'Architecture Decisions', url: '#Architecture-Decisions' },
     ];
 </script>
 
@@ -41,6 +32,8 @@ Besides improving the developer experience, the core goal of NDK is to improve t
 ```sh
 npm add @nostr-dev-kit/ndk
 ```
+
+If you're in a real hurry, jump straight to our page on [common patterns & uses of NDK](/guides/common-patterns).
 
 <SectionHeader title="Debugging" />
 
@@ -59,45 +52,13 @@ localStorage.debug = 'ndk:*'
 
 <SectionHeader title="Support" />
 
-<SectionHeader title="NDK NIP-28 group chat" subheader={true} />
+<SectionHeader title="NDK NIP-28 Group Chat" subheader={true} />
 
  * note15m6rdfvlmd0z836hk83sg7r59xtv23qnmamhsslq5uc6744fdm4qfkeat3
     * [Coracle](https://app.coracle.social/chat/note15m6rdfvlmd0z836hk83sg7r59xtv23qnmamhsslq5uc6744fdm4qfkeat3)
     * [Nostrchat](https://www.nostrchat.io/channel/a6f436a59fdb5e23c757b1e30478742996c54413df777843e0a731af56a96eea)
 
-<SectionHeader title="Features" />
-
-- [x] NIP-01
-- [x] Caching adapters
-    * Server-side
-        - [x] [Redis](https://github.com/pablof7z/ndk-cache-redis)
-        - [ ] In-memory
-    * Client-side
-        - [ ] LocalStorage
-        - [ ] IndexDB
-- [~] NIP-04: Encryption support
-- [ ] NIP-26: Event delegation
-- [ ] NIP-41: Relay authentication
-- [x] NIP-57: Zaps
-    - [x] LUD06
-    - [x] LUD16
-- [ ] NIP-65: Contacts' Relay list
-- Subscription Management
-    - [x] Auto-grouping queries
-    - [x] Auto-closing subscriptions
-- Signing Adapters
-    - [x] Private key
-    - [x] NIP-07
-    - [ ] NIP-26
-    - [x] NIP-46
-- Relay discovery
-    - [ ] Gossip-model (NIP-65)
-    - [ ] Implicit relays discovery following pubkey usage
-    - [ ] Implicit relays discovery following `t` tag usage
-    - [ ] Explicit relays blacklist
-- [ ] nostr-tools/SimplePool drop-in replacement interface
-
-<SectionHeader title="Instantiate an NDK instance" />
+<SectionHeader title="Instantiate an NDK Instance" />
 
 You can pass an object with several options to a newly created instance of NDK.
 
@@ -113,7 +74,7 @@ import NDK from "@nostr-dev-kit/ndk";
 ndk = new NDK({ explicitRelayUrls: ["wss://a.relay", "wss://another.relay"] });
 ```
 
-Note: In normal client use, it's best practice to instantiate NDK as a singleton class. [See more below](#architecture).
+Note: In normal client use, it's best practice to instantiate NDK as a singleton class. [See more below](#Architecture-Decisions).
 
 <SectionHeader title="Connecting" />
 
@@ -135,7 +96,7 @@ NDK uses signers _optionally_ passed in to sign events. Note that it is possible
 
 Signing adapters can be passed in when NDK is instantiated or later during runtime.
 
-<SectionHeader title="NIP-07 browser extensions" subheader={true} />
+<SectionHeader title="NIP-07 Browser Extensions" subheader={true} />
 
 Instatiate NDK with a NIP-07 signer (e.g. Alby, nos2x)
 
@@ -168,7 +129,7 @@ ndkEvent.content = "Hello, world!";
 ndkEvent.publish(); // This will trigger the extension to ask the user to confirm signing.
 ```
 
-<SectionHeader title="NIP-46 remote signing" subheader={true} />
+<SectionHeader title="NIP-46 Remote Signing" subheader={true} />
 
 ```ts
 const signingAdapter = new NDK.RemoteSignerAdapter();
@@ -187,7 +148,7 @@ NDK will eventually allow you to use multiple caches simultaneously and allow fo
 
 The most important data to cache is _where_ a user or note might be found. UX suffers profoundly when this type of data cannot be found. By design, the Nostr protocol leaves beadcrums of where a user or note might be found and NDK does it's best to store this data automatically and use it when you query for events.
 
-<SectionHeader title="Using a cache adapter" subheader={true} />
+<SectionHeader title="Using a Cache Adapter" subheader={true} />
 
 ```ts
 const redisAdapter = new RedisAdapter(redisUrl);
@@ -257,79 +218,6 @@ Often, clients need to fetch data but don't need to maintain an open connection 
 
 ```ts
 ndk.subscription({ kinds: [0], authors: ["..."] }, { autoclose: true });
-```
-
-<SectionHeader title="Convenience Methods" />
-
-NDK implements several conveience methods for common queries.
-
-<SectionHeader title="Instantiate a user" subheader={true} />
-
-This is a handy method for instantiating a new `NDKUser` and associating the current NDK instance with that user for future calls.
-
-```ts
-const pablo = ndk.getUser({
-    npub: "npub1l2vyh47mk2p0qlsku7hg0vn29faehy9hy34ygaclpn66ukqp3afqutajft"
-});
-
-const jeff = ndk.getUser({
-    hexpubkey: "1739d937dc8c0c7370aa27585938c119e25c41f6c441a5d34c6d38503e3136ef"
-});
-```
-<SectionHeader title="Fetch a user profile" subheader={true} />
-
-You can easily fetch a user's profile data from `kind: 0` events on relays. Calling `.fetchProfile()` will update the `profile` attribute on the user object instead of returning the profile directly. NDK then makes it trivial to update values and publish those updates back to relays.
-
-```ts
-const pablo = ndk.getUser({
-    npub: "npub1l2vyh47mk2p0qlsku7hg0vn29faehy9hy34ygaclpn66ukqp3afqutajft"
-});
-await pablo.fetchProfile();
-
-const pabloFullProfile = pablo.profile;
-
-pablo.profile.name = "Pablo";
-// COMING SOON
-await pablo.publish(); // Triggers signing via signer
-```
-<SectionHeader title="Find an event or all events" subheader={true} />
-
-You can fetch the first event or all events that match a given set of filters.
-
-```ts
-// Create a filter
-const filter: NDKFilter = { kinds: [1], authors: [hexpubkey1, hexpubkey2] };
-
-// Will return only the first event
-event = await ndk.fetchEvent(filter);
-
-// Will return all found events
-events = await ndk.fetchEvents(filter);
-```
-
-<SectionHeader title="Create & publish events" subheader={true} />
-
-```ts
-const ndk = new NDK({ explicitRelays, signer });
-const event = new NDKEvent(ndk);
-event.kind = 1;
-event.content = "PV Nostr! 🤙🏼";
-await ndk.publish(event);
-```
-<SectionHeader title="React to an event" subheader={true} />
-
-```ts
-// Find the first event from @jack, and react/like it.
-const event = await ndk.fetchEvent({ author: "jack@cashapp.com" })[0];
-await event.react("🤙");
-```
-
-<SectionHeader title="Zap an event" subheader={true} />
-
-```ts
-// Find the first event from @jack, and zap it.
-const event = await ndk.fetchEvent({ author: "jack@cashapp.com" })[0];
-await event.zap(1337, "Zapping your post!"); // Returns a zap request
 ```
 
 <SectionHeader title="Architecture Decisions" />

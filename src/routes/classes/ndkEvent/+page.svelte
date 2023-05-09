@@ -17,7 +17,27 @@
                 { title: 'tags', url: '#tags' }
             ]
         },
-        { title: 'Methods', url: '#methods' }
+        {
+            title: 'Methods',
+            url: '#methods',
+            sublinks: [
+                { title: 'constructor', url: '#constructor' },
+                { title: 'rawEvent', url: '#rawEvent' },
+                { title: 'toNostrEvent', url: '#toNostrEvent' },
+                { title: 'isReplaceable', url: '#isReplaceable' },
+                { title: 'isParamReplaceable', url: '#isParamReplaceable' },
+                { title: 'encode', url: '#encode' },
+                { title: 'encrypt', url: '#encrypt' },
+                { title: 'decrypt', url: '#decrypt' },
+                { title: 'getMatchingTags', url: '#getMatchingTags' },
+                { title: 'sign', url: '#sign' },
+                { title: 'publish', url: '#publish' },
+                { title: 'replaceableDTag', url: '#replaceableDTag' },
+                { title: 'tagId', url: '#tagId' },
+                { title: 'tagReference', url: '#tagReference' },
+                { title: 'zap', url: '#zap' }
+            ]
+        }
     ];
 </script>
 

@@ -54,7 +54,7 @@ Required: An array of `NDKTag` objects.
 
 <SectionHeader title="Methods" />
 
-### Constructor
+<SectionHeader title="constructor" subheader={true} />
 
 ```js
 new NDKEvent(ndk?, event?)
@@ -62,7 +62,167 @@ new NDKEvent(ndk?, event?)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :----- |
-| `ndk?` | [NDK](/classes/ndk) |
-| `event?` | `NostrEvent` |
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `ndk` | An NDK instance | NDK | `Optional` |
+| `event` | A NostrEvent shaped object | NostrEvent | `Optional` |
+
+#### Returns
+
+`NDKEvent`
+
+<SectionHeader title="rawEvent" subheader={true} />
+
+Returns a raw NostrEvent object.
+
+#### Parameters
+
+none
+
+#### Returns
+
+`NostrEvent`
+
+<SectionHeader title="toNostrEvent" subheader={true} />
+
+Returns a `NostrEvent` object, trying to fill in missing fields where possible.
+
+```js
+let myNostrEvent = ndkEventInstance.toNostrEvent();
+
+// Or pass in the pubkey of author of the event
+// This will pre-fill fields where possible
+let myNostrEvent = ndkEventInstance.toNostrEvent(pubkey: '1739d937dc8c0c7370aa27585938c119e25c41f6c441a5d34c6d38503e3136ef');
+```
+
+#### Parameters
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `pubkey` | The pubkey of the event author | string | `Optional` |
+
+#### Returns
+
+`Promise<NostrEvent>`
+
+<SectionHeader title="getMatchingTags" subheader={true} />
+
+Returns an array of NDKTags matching a given name.
+
+```js
+// Returns all the "a" tags on an event.
+ndkEvent.getMatchingTags("a")
+
+// Returns all the "p" tags on an event.
+ndkEvent.getMatchingTags("p")
+```
+
+#### Parameters
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `tagName` | The name of the tag you're looking for | string | `Required` |
+
+#### Returns
+
+`NDKTag[]`
+
+<SectionHeader title="sign" subheader={true} />
+
+Sign the event if a signer is present. Will throw an error if you haven't declared an NDKSigner.
+
+* Passing a signer is optional if you've already declared a signer when instantiating `NDK`.
+* Calling `sign` will generate any required tags automatically.
+* For replaceable events, calling `sign` will set the created_at field to the current time.
+
+```js
+// To use a NIP-07 signer
+const nip07signer = new NDKNip07Signer();
+ndkEvent.sign(nip07signer);
+```
+
+#### Parameters
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `signer` | The signer you want to use to sign the event | `NDKSigner` | `Optional` |
+
+#### Returns
+
+`Promise<void>`
+
+<SectionHeader title="publish" subheader={true} />
+
+Publish the event.
+
+* If the event is not signed, `publish` will attempt to first sign the event using the `NDKSigner` declared when instantiating `NDK`.
+
+```js
+ndkEvent.publish();
+```
+
+#### Returns
+
+`Promise<void>`
+
+<SectionHeader title="replaceableDTag" subheader={true} />
+
+Returns the value of the `d` tag of a parameterized replaceable event. Will throw an error if the event is not a parameterized replaceable event.
+
+```js
+ndkEvent.replaceableDTag();
+```
+
+#### Returns
+
+`string`
+
+<SectionHeader title="tagId" subheader={true} />
+
+Returns the `id` of the event or, if it's a parameterized replaceable event, the value of the `d` tag.
+
+```js
+ndkEvent.tagId();
+```
+
+#### Returns
+
+`string`
+
+<SectionHeader title="tagReference" subheader={true} />
+
+Returns the the tag reference that can be used to reference this event from another event.
+
+```js
+kind1NoteEvent.tagReference();
+// Will return ["e", "theTagId"]
+
+replaceableEvent.tagReference();
+// Will return ["a", "dTagValue"]
+```
+
+#### Returns
+
+`NDKTag`
+
+<SectionHeader title="zap" subheader={true} />
+
+Arguably the most important method in NDK. will create a zap request for an existing event.
+
+* Will throw an error if you haven't already declared an `NDKSigner` when instantiating NDK.
+* You can include an optional comment and an array of `NDKTag` objects that will be added to the zap request event.
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `amount` | The amount to be zapped | `number` | `Required` |
+| `comment` | A comment to include in the zap | `string` | `Optional` |
+| `extraTags` | Extra tags to add to the zap request event | `NDKTag[]` | `Optional` |
+
+
+```js
+kind1NoteEvent.zap(402, 'What a great note! 🫂');
+```
+
+#### Returns
+
+`Promise<string|null>`
