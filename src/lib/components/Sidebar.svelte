@@ -7,8 +7,10 @@
         classes: [
             { href: '/classes/ndk', linkText: 'NDK' },
             { href: '/classes/ndkEvent', linkText: 'NDKEvent' },
+            { href: '/classes/ndkRelay', linkText: 'NDKRelay' },
             { href: '/classes/ndkUser', linkText: 'NDKUser' },
             { href: '/classes/ndkUserProfile', linkText: 'NDKUserProfile' }
+
         ],
         guides: [
             { href: '/', linkText: 'Getting started' },
