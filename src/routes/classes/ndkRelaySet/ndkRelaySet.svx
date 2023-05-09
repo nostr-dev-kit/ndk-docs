@@ -1,0 +1,15 @@
+<script lang='ts'>
+    import SectionHeader from '$lib/components/SectionHeader.svelte'
+</script>
+
+# NDKRelaySet
+
+This is the NDKRelaySet class. A relay set is a group of relays. This grouping can be short-living, for a single REQ or can be long-lasting, for example for the explicit relay list the user has specified.
+
+Requests to relays should be sent through this interface.
+
+
+
+<SectionHeader title="Properties" />
+
+<SectionHeader title="cacheAdapter" subheader={true} />

@@ -1,0 +1,11 @@
+<script lang='ts'>
+    import SectionHeader from '$lib/components/SectionHeader.svelte'
+</script>
+
+# NDKNip46Signer
+
+This is the NDKNip46Signer class. 
+
+<SectionHeader title="Properties" />
+
+<SectionHeader title="cacheAdapter" subheader={true} />

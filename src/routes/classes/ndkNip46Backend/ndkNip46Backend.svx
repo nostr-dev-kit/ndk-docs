@@ -1,0 +1,11 @@
+<script lang='ts'>
+    import SectionHeader from '$lib/components/SectionHeader.svelte'
+</script>
+
+# NDKNip46Backend
+
+This is the NDKNip46Backend class.
+
+<SectionHeader title="Properties" />
+
+<SectionHeader title="cacheAdapter" subheader={true} />

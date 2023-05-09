@@ -1,0 +1,11 @@
+<script lang='ts'>
+    import SectionHeader from '$lib/components/SectionHeader.svelte'
+</script>
+
+# NDKSubscription
+
+This is the NDKSubscription class.
+
+<SectionHeader title="Properties" />
+
+<SectionHeader title="cacheAdapter" subheader={true} />
