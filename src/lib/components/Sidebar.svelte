@@ -7,7 +7,14 @@
         classes: [
             { href: '/classes/ndk', linkText: 'NDK' },
             { href: '/classes/ndkEvent', linkText: 'NDKEvent' },
+            { href: '/classes/ndkNip07Signer', linkText: 'NDKNip07Signer' },
+            { href: '/classes/ndkNip46Backend', linkText: 'NDKNip46Backend' },
+            { href: '/classes/ndkNip46Signer', linkText: 'NDKNip46Signer' },
+            { href: '/classes/ndkPrivateKeySigner', linkText: 'NDKPrivateKeySigner' },
             { href: '/classes/ndkRelay', linkText: 'NDKRelay' },
+            { href: '/classes/ndkRelaySet', linkText: 'NDKRelaySet' },
+            { href: '/classes/ndkSubscription', linkText: 'NDKSubscription' },
+            { href: '/classes/ndkSubscriptionGroup', linkText: 'NDKSubscriptionGroup' },
             { href: '/classes/ndkUser', linkText: 'NDKUser' },
             { href: '/classes/ndkUserProfile', linkText: 'NDKUserProfile' }
 
