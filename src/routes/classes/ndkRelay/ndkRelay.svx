@@ -1,0 +1,11 @@
+<script lang='ts'>
+    import SectionHeader from '$lib/components/SectionHeader.svelte'
+</script>
+
+# NDKRelay
+
+This is the default NDK class. Usually you should instantiate a single NDK instance in your app. This instance will track the state of all relays connected, explicity and otherwise.
+
+<SectionHeader title="Properties" />
+
+<SectionHeader title="cacheAdapter" subheader={true} />
