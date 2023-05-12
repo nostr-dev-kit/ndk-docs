@@ -4,28 +4,28 @@
 
     let tableOfContents: App.NavLink[] = [
         {
+            title: 'Constructor',
+            url: '#constructor',
+            sublinks: [{ title: 'constructor', url: '#constructor' }]
+        },
+        {
             title: 'Properties',
             url: '#properties',
             sublinks: [
-                { title: 'cacheAdapter', url: '#cacheAdapter' },
                 { title: 'debug', url: '#debug' },
-                { title: 'explicitRelayUrls', url: '#explicitRelayUrls' },
-                { title: 'pool', url: '#pool' },
-                { title: 'signer', url: '#signer' }
+                { title: 'handlers', url: '#handlers' },
+                { title: 'localUser', url: '#localUser' },
+                { title: 'ndk', url: '#ndk' }
             ]
         },
         {
             title: 'Methods',
             url: '#methods',
             sublinks: [
-                { title: 'constructor', url: '#constructor' },
-                { title: 'assertSigner', url: '#assertSigner' },
-                { title: 'connect', url: '#connect' },
-                { title: 'fetchEvent', url: '#fetchEvent' },
-                { title: 'fetchEvents', url: '#fetchEvents' },
-                { title: 'getUser', url: '#getUser' },
-                { title: 'publish', url: '#publish' },
-                { title: 'subscribe', url: '#subscribe' }
+                { title: 'pubkeyAllowed', url: '#pubkeyAllowed' },
+                { title: 'setStrategy', url: '#setStrategy' },
+                { title: 'signEvent', url: '#signEvent' },
+                { title: 'start', url: '#start' }
             ]
         }
     ];
