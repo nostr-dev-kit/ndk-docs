@@ -16,7 +16,7 @@
                 { title: 'ndk', url: '#ndk' },
                 { title: 'opts', url: '#opts' },
                 { title: 'relaySet', url: '#relaySet' },
-                { title: 'relaySubscription', url: '#relaySubscription' },
+                { title: 'relaySubscriptions', url: '#relaySubscriptions' },
                 { title: 'subId', url: '#subId' }
             ]
         },

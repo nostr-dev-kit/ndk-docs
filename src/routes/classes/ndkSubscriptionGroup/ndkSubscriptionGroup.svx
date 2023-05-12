@@ -6,6 +6,23 @@
 
 This is the NDKSubscriptionGroup class.
 
+<SectionHeader title="Constructor" />
+
+<SectionHeader title="constructor" subheader={true} />
+
 <SectionHeader title="Properties" />
 
-<SectionHeader title="cacheAdapter" subheader={true} />
+<SectionHeader title="filter" subheader={true} />
+<SectionHeader title="ndk" subheader={true} />
+<SectionHeader title="opts" subheader={true} />
+<SectionHeader title="relaySet" subheader={true} />
+<SectionHeader title="relaySubscriptions" subheader={true} />
+<SectionHeader title="subId" subheader={true} />
+
+<SectionHeader title="Methods" />
+
+<SectionHeader title="eoseReceived" subheader={true} />
+<SectionHeader title="eventReceived" subheader={true} />
+<SectionHeader title="groupableId" subheader={true} />
+<SectionHeader title="start" subheader={true} />
+<SectionHeader title="stop" subheader={true} />
