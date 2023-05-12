@@ -1,0 +1,20 @@
+<script lang='ts'>
+    import SectionHeader from '$lib/components/SectionHeader.svelte'
+</script>
+
+# NDKUserProfile
+
+Represents a user's profile
+
+<SectionHeader title="Properties" />
+
+<SectionHeader title="about" subheader={true} />
+<SectionHeader title="banner" subheader={true} />
+<SectionHeader title="bio" subheader={true} />
+<SectionHeader title="displayName" subheader={true} />
+<SectionHeader title="image" subheader={true} />
+<SectionHeader title="lud06" subheader={true} />
+<SectionHeader title="lud16" subheader={true} />
+<SectionHeader title="name" subheader={true} />
+<SectionHeader title="nip05" subheader={true} />
+<SectionHeader title="zapService" subheader={true} />
