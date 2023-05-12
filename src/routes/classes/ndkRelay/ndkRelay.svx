@@ -4,8 +4,29 @@
 
 # NDKRelay
 
-This is the default NDK class. Usually you should instantiate a single NDK instance in your app. This instance will track the state of all relays connected, explicity and otherwise.
+The NDKRelay class represents a connection to a relay.
+
+<SectionHeader title="Constructors" />
+
+<SectionHeader title="constructor" subheader={true} />
 
 <SectionHeader title="Properties" />
 
-<SectionHeader title="cacheAdapter" subheader={true} />
+<SectionHeader title="activeSubscriptions" subheader={true} />
+<SectionHeader title="complaining" subheader={true} />
+<SectionHeader title="scores" subheader={true} />
+<SectionHeader title="url" subheader={true} />
+
+<SectionHeader title="Accessors" />
+
+<SectionHeader title="connectionStats" subheader={true} />
+<SectionHeader title="status" subheader={true} />
+
+<SectionHeader title="Methods" />
+
+<SectionHeader title="connect" subheader={true} />
+<SectionHeader title="disconnect" subheader={true} />
+<SectionHeader title="handleNotice" subheader={true} />
+<SectionHeader title="publish" subheader={true} />
+<SectionHeader title="scoreSlowerEvent" subheader={true} />
+<SectionHeader title="subscribe" subheader={true} />
