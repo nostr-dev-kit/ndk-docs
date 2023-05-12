@@ -4,3 +4,23 @@
 
 # NDKUser
 
+Represents a pubkey.
+
+<SectionHeader title="Constructor" />
+
+<SectionHeader title="constructor" subheader={true} />
+
+<SectionHeader title="Properties" />
+
+<SectionHeader title="follows" subheader={true} />
+<SectionHeader title="ndk" subheader={true} />
+<SectionHeader title="npub" subheader={true} />
+<SectionHeader title="profile" subheader={true} />
+<SectionHeader title="relayUrls" subheader={true} />
+
+<SectionHeader title="Methods" />
+
+<SectionHeader title="fetchProfile" subheader={true} />
+<SectionHeader title="hexpubkey" subheader={true} />
+<SectionHeader title="relayList" subheader={true} />
+<SectionHeader title="FromNip05" subheader={true} />

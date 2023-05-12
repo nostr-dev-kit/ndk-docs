@@ -4,14 +4,31 @@
 
     let tableOfContents: App.NavLink[] = [
         {
+            title: 'Constructor',
+            url: '#constructor',
+            sublinks: [{ title: 'constructor', url: '#constructor' }]
+        },
+        {
             title: 'Properties',
             url: '#properties',
             sublinks: [
-                { title: 'content', url: '#content' },
-                { title: 'created_at', url: '#created_at' }
+                { title: 'follows', url: '#follows' },
+                { title: 'ndk', url: '#ndk' },
+                { title: 'npub', url: '#npub' },
+                { title: 'profile', url: '#profile' },
+                { title: 'relayUrls', url: '#relayUrls' }
             ]
         },
-        { title: 'Methods', url: '#methods' }
+        {
+            title: 'Methods',
+            url: '#methods',
+            sublinks: [
+                { title: 'fetchProfile', url: '#fetchProfile' },
+                { title: 'hexpubkey', url: '#hexpubkey' },
+                { title: 'relayList', url: '#relayList' },
+                { title: 'fromNip05', url: '#fromNip05' }
+            ]
+        }
     ];
 </script>
 
