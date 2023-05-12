@@ -4,28 +4,31 @@
 
     let tableOfContents: App.NavLink[] = [
         {
+            title: 'Constructor',
+            url: '#constructor',
+            sublinks: [{ title: 'constructor', url: '#constructor' }]
+        },
+        {
             title: 'Properties',
             url: '#properties',
             sublinks: [
-                { title: 'cacheAdapter', url: '#cacheAdapter' },
-                { title: 'debug', url: '#debug' },
-                { title: 'explicitRelayUrls', url: '#explicitRelayUrls' },
-                { title: 'pool', url: '#pool' },
-                { title: 'signer', url: '#signer' }
+                { title: 'filter', url: '#filter' },
+                { title: 'ndk', url: '#ndk' },
+                { title: 'opts', url: '#opts' },
+                { title: 'relaySet', url: '#relaySet' },
+                { title: 'relaySubscription', url: '#relaySubscription' },
+                { title: 'subId', url: '#subId' }
             ]
         },
         {
             title: 'Methods',
             url: '#methods',
             sublinks: [
-                { title: 'constructor', url: '#constructor' },
-                { title: 'assertSigner', url: '#assertSigner' },
-                { title: 'connect', url: '#connect' },
-                { title: 'fetchEvent', url: '#fetchEvent' },
-                { title: 'fetchEvents', url: '#fetchEvents' },
-                { title: 'getUser', url: '#getUser' },
-                { title: 'publish', url: '#publish' },
-                { title: 'subscribe', url: '#subscribe' }
+                { title: 'eoseReceived', url: '#eoseReceived' },
+                { title: 'eventReceived', url: '#eventReceived' },
+                { title: 'groupableId', url: '#groupableId' },
+                { title: 'start', url: '#start' },
+                { title: 'stop', url: '#stop' }
             ]
         }
     ];
