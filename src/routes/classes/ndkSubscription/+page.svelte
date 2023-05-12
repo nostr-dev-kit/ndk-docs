@@ -10,7 +10,7 @@
         },
         {
             title: 'Properties',
-            url: '#properties',
+            url: '#Properties',
             sublinks: [
                 { title: 'filter', url: '#filter' },
                 { title: 'ndk', url: '#ndk' },
@@ -22,7 +22,7 @@
         },
         {
             title: 'Methods',
-            url: '#methods',
+            url: '#Methods',
             sublinks: [
                 { title: 'eoseReceived', url: '#eoseReceived' },
                 { title: 'eventReceived', url: '#eventReceived' },

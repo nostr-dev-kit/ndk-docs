@@ -15,9 +15,19 @@
             { href: '/classes/ndkRelaySet', linkText: 'NDKRelaySet' },
             { href: '/classes/ndkSubscription', linkText: 'NDKSubscription' },
             { href: '/classes/ndkSubscriptionGroup', linkText: 'NDKSubscriptionGroup' },
-            { href: '/classes/ndkUser', linkText: 'NDKUser' },
-            { href: '/classes/ndkUserProfile', linkText: 'NDKUserProfile' }
-
+            { href: '/classes/ndkUser', linkText: 'NDKUser' }
+        ],
+        interfaces: [
+            { href: '/interfaces/getUserParams', linkText: 'getUserParams' },
+            { href: '/interfaces/IEventHandlingStrategy', linkText: 'IEventHandlingStrategy' },
+            { href: '/interfaces/NDKCacheAdapter', linkText: 'NDKCacheAdapter' },
+            { href: '/interfaces/NDKConstructorParams', linkText: 'NDKConstructorParams' },
+            { href: '/interfaces/NDKFilterOptions', linkText: 'NDKFilterOptions' },
+            { href: '/interfaces/NDKRelayConnectionStats', linkText: 'NDKRelayConnectionStats' },
+            { href: '/interfaces/NDKSigner', linkText: 'NDKSigner' },
+            { href: '/interfaces/NDKSubscriptionOptions', linkText: 'NDKSubscriptionOptions' },
+            { href: '/interfaces/ndkUserProfile', linkText: 'NDKUserProfile' },
+            { href: '/interfaces/NDKZapInvoice', linkText: 'NDKZapInvoice' }
         ],
         guides: [
             { href: '/', linkText: 'Getting started' },
@@ -56,6 +66,17 @@
     </ul>
 </div>
 
+<div class="navWrapper classes md:mt-10 ml-4">
+    <h2 class="mb-2 font-semibold">Interfaces</h2>
+    <ul class="nav text-base">
+        {#each navLinks.interfaces as link}
+            <li>
+                <NavLink on:navLinkClicked href={link.href} linkText={link.linkText} />
+            </li>
+        {/each}
+    </ul>
+</div>
+
 <div class="navWrapper resources mt-10 mb-10 ml-4">
     <h2 class="mb-2 font-semibold">Resources</h2>
     <ul class="nav text-base">
@@ -69,7 +90,7 @@
 
 <div class="flex flex-col items-center mx-auto">
     <DonateButton variant="primary" classes="text-sm" />
-    <div class="colophon text-zinc-500 dark:text-zinc-400 mt-4 text-sm text-center px-8">
+    <div class="colophon text-zinc-500 dark:text-zinc-400 mt-4 text-sm text-center px-8 pb-12">
         <div>Made with 💜 & ⚡ by</div>
         <a
             href="https://primal.net/pablof7z"

@@ -10,7 +10,7 @@
         },
         {
             title: 'Properties',
-            url: '#properties',
+            url: '#Properties',
             sublinks: [
                 { title: 'cacheAdapter', url: '#cacheAdapter' },
                 { title: 'debug', url: '#debug' },
@@ -29,7 +29,7 @@
         },
         {
             title: 'Methods',
-            url: '#methods',
+            url: '#Methods',
             sublinks: [
                 { title: 'connect', url: '#connect' },
                 { title: 'disconnect', url: '#disconnect' },

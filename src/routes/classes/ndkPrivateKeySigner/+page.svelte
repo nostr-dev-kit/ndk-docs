@@ -10,12 +10,12 @@
         },
         {
             title: 'Properties',
-            url: '#properties',
+            url: '#Properties',
             sublinks: [{ title: 'privateKey', url: '#privateKey' }]
         },
         {
             title: 'Methods',
-            url: '#methods',
+            url: '#Methods',
             sublinks: [
                 { title: 'blockUntilReady', url: '#blockUntilReady' },
                 { title: 'decrypt', url: '#decrypt' },

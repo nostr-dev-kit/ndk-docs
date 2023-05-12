@@ -10,12 +10,12 @@
         },
         {
             title: 'Properties',
-            url: '#properties',
+            url: '#Properties',
             sublinks: [{ title: 'relays', url: '#relays' }]
         },
         {
             title: 'Methods',
-            url: '#methods',
+            url: '#Methods',
             sublinks: [
                 { title: 'getId', url: '#getId' },
                 { title: 'publish', url: '#publish' },

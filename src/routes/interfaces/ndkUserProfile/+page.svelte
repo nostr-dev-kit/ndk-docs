@@ -5,7 +5,7 @@
     let tableOfContents: App.NavLink[] = [
         {
             title: 'Properties',
-            url: '#properties',
+            url: '#Properties',
             sublinks: [
                 { title: 'about', url: '#about' },
                 { title: 'banner', url: '#banner' },

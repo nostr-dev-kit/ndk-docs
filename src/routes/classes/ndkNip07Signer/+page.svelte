@@ -10,7 +10,7 @@
         },
         {
             title: 'Methods',
-            url: '#methods',
+            url: '#Methods',
             sublinks: [
                 { title: 'blockUntilReady', url: '#blockUntilReady' },
                 { title: 'decrypt', url: '#decrypt' },

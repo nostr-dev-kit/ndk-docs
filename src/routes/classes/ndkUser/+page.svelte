@@ -10,7 +10,7 @@
         },
         {
             title: 'Properties',
-            url: '#properties',
+            url: '#Properties',
             sublinks: [
                 { title: 'follows', url: '#follows' },
                 { title: 'ndk', url: '#ndk' },
@@ -21,7 +21,7 @@
         },
         {
             title: 'Methods',
-            url: '#methods',
+            url: '#Methods',
             sublinks: [
                 { title: 'fetchProfile', url: '#fetchProfile' },
                 { title: 'hexpubkey', url: '#hexpubkey' },

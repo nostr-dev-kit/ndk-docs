@@ -10,7 +10,7 @@
         },
         {
             title: 'Properties',
-            url: '#properties',
+            url: '#Properties',
             sublinks: [
                 { title: 'debug', url: '#debug' },
                 { title: 'handlers', url: '#handlers' },
@@ -20,7 +20,7 @@
         },
         {
             title: 'Methods',
-            url: '#methods',
+            url: '#Methods',
             sublinks: [
                 { title: 'pubkeyAllowed', url: '#pubkeyAllowed' },
                 { title: 'setStrategy', url: '#setStrategy' },

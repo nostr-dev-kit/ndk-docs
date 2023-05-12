@@ -10,7 +10,7 @@
         },
         {
             title: 'Properties',
-            url: '#properties',
+            url: '#Properties',
             sublinks: [
                 { title: 'localSigner', url: '#localSigner' },
                 { title: 'remotePubkey', url: '#remotePubkey' }
@@ -18,7 +18,7 @@
         },
         {
             title: 'Methods',
-            url: '#methods',
+            url: '#Methods',
             sublinks: [
                 { title: 'blockUntilReady', url: '#blockUntilReady' },
                 { title: 'decrypt', url: '#decrypt' },

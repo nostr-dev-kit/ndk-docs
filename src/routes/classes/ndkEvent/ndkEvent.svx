@@ -6,6 +6,25 @@
 
 The `NDKEvent` class represents the atomic unit of the Nostr protocol, the event.
 
+<SectionHeader title="Constructor" />
+
+<SectionHeader title="constructor" subheader={true} />
+
+```js
+new NDKEvent(ndk?, event?)
+```
+
+#### Parameters
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `ndk` | An NDK instance | NDK | `Optional` |
+| `event` | A NostrEvent shaped object | NostrEvent | `Optional` |
+
+#### Returns
+
+`NDKEvent`
+
 <SectionHeader title="Properties" />
 
 | Name | Description | Type | Required? |
@@ -53,23 +72,6 @@ Required: An array of `NDKTag` objects.
 
 
 <SectionHeader title="Methods" />
-
-<SectionHeader title="constructor" subheader={true} />
-
-```js
-new NDKEvent(ndk?, event?)
-```
-
-#### Parameters
-
-| Name | Description | Type | Required? |
-| :------ | :----- | :----- | :----- |
-| `ndk` | An NDK instance | NDK | `Optional` |
-| `event` | A NostrEvent shaped object | NostrEvent | `Optional` |
-
-#### Returns
-
-`NDKEvent`
 
 <SectionHeader title="rawEvent" subheader={true} />
 
