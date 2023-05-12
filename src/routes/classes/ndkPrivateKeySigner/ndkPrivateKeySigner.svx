@@ -6,6 +6,19 @@
 
 This is the NDK PirvateKeySigner class.
 
+<SectionHeader title="Constructors" />
+
+<SectionHeader title="constructor" subheader={true} />
+
 <SectionHeader title="Properties" />
 
-<SectionHeader title="cacheAdapter" subheader={true} />
+<SectionHeader title="privateKey" subheader={true} />
+
+<SectionHeader title="Methods" />
+
+<SectionHeader title="blockUntilReady" subheader={true} />
+<SectionHeader title="decrypt" subheader={true} />
+<SectionHeader title="encrypt" subheader={true} />
+<SectionHeader title="sign" subheader={true} />
+<SectionHeader title="user" subheader={true} />
+<SectionHeader title="generate" subheader={true} />
