@@ -9,7 +9,18 @@ This is the NDKRelaySet class. A relay set is a group of relays. This grouping c
 Requests to relays should be sent through this interface.
 
 
+<SectionHeader title="Constructor" />
+
+<SectionHeader title="constructor" subheader={true} />
 
 <SectionHeader title="Properties" />
 
-<SectionHeader title="cacheAdapter" subheader={true} />
+<SectionHeader title="relays" subheader={true} />
+
+<SectionHeader title="Methods" />
+
+<SectionHeader title="getId" subheader={true} />
+<SectionHeader title="publish" subheader={true} />
+<SectionHeader title="size" subheader={true} />
+<SectionHeader title="subscribe" subheader={true} />
+<SectionHeader title="fromRelayUrls" subheader={true} />
