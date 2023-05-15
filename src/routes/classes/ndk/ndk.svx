@@ -27,36 +27,65 @@ This is the default NDK class. Usually you should instantiate a single NDK insta
 
 <SectionHeader title="Properties" />
 
-| Name | Description | Type | Required? |
-| :------ | :----- | :----- | :----- |
-| `cacheAdapter` | an instance of `NDKCacheAdapter` | `NDKCacheAdapter` | `Optional` |
-| `debug` | an instance of `Debugger` | `Debugger` | `Optional` |
-| `explicitRelayUrls` | an instance of `NDKCacheAdapter` | `string[]` | `Optional` |
-| `pool` | an instance of `NDKPool` | `NDKPool` | `Optional` |
-| `signer` | an instance of `NDKSigner` | `NDKSigner` | `Optional` |
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| [`cacheAdapter`](#cacheAdapter) | an instance of `NDKCacheAdapter` | `NDKCacheAdapter` |
+| [`debug`](#debug) | an instance of `Debugger` | `Debugger` |
+| [`explicitRelayUrls`](#explicitRelayUrls) | an array of URLs of relays NDK will attempt to connect to | `string[]` |
+| [`pool`](#pool) | an instance of `NDKPool` | `NDKPool` |
+| [`signer`](#signer) | an instance of `NDKSigner` | `NDKSigner` |
 
 <SectionHeader title="cacheAdapter" subheader={true} />
 
-Optional: An instance of NDKCacheAdapter. NDKCacheAdapters help you cache Nostr data using different strategies.
+An instance of NDKCacheAdapter. NDKCacheAdapters help you cache Nostr data using different strategies.
+
+#### Returns
+
+`NDKCacheAdapter`
 
 <SectionHeader title="debug" subheader={true} />
 
-Optional: Pass in your own instance of Debugger.
+Returns an instance of Debugger.
+
+#### Returns
+
+`Debugger`
 
 <SectionHeader title="explicitRelayUrls" subheader={true} />
 
-Optional: An array of relay URLs as strings. These are the relays that NDK will attempt to connect to.
+An array of relay URLs as strings. These are the relays that NDK will attempt to connect to.
+
+#### Returns
+
+`NDKCacheAdapter`
 
 <SectionHeader title="pool" subheader={true} />
 
-Optional: An instnace of NDKPool, this is the pool of relay connections that NDK uses when fetching data.
+An instnace of NDKPool, this is the pool of relay connections that NDK uses when fetching data.
+
+#### Returns
+
+`NDKPool`
 
 <SectionHeader title="signer" subheader={true} />
 
-Optional: An instance of NDKSigner, this is the signer strategy that will be used when attempting to sign events.
+An instance of NDKSigner, this is the signer strategy that will be used when attempting to sign events.
 
+#### Returns
+
+`NDKSigner`
 
 <SectionHeader title="Methods" />
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| [`assertSigner`](#assertSigner) | Checks that a signer is available | `Promise<void>` |
+| [`connect`](#connect) | Connect to a relay with an optional timeout | `Promise<void>` |
+| [`fetchEvent`](#fetchEvent) | Fetch a single event matching a set of filters | `Promise<NDKEvent>` |
+| [`fetchEvents`](#fetchEvents) | Fetch multiple events matching a set of filters | `Promise<Set<NDKEvent>>` |
+| [`getUser`](#getUser) | Instantiates an instance of `NDKUser` | `NDKUser` |
+| [`publish`](#publish) | Publishes the event to connected relays | `Promise<void>` |
+| [`subscribe`](#subscribe) | Opens a persistent connection to relays for a specific type of event(s) | `NDKSubscription` |
 
 <SectionHeader title="assertSigner" subheader={true} />
 

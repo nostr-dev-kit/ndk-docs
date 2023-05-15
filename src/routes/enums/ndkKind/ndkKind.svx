@@ -44,12 +44,7 @@ Event kinds. As new event kinds are formalized in NIPs this list will continue t
 
 <SectionHeader title="isReplaceable" subheader={true} />
 
-Returns a boolean value telling whether the kind of a given even is a replaceable event, i.e. is in the kind range 10000-29999
-
-```js
-let myEvent = new NDKEvent(opts);
-let eventIsReplaceable = isReplaceable(myEvent);
-```
+Returns a boolean value telling whether the kind of a given event is a replaceable event, i.e. is in the kind range 10000-29999
 
 #### Parameters
 
@@ -63,12 +58,7 @@ let eventIsReplaceable = isReplaceable(myEvent);
 
 <SectionHeader title="isParamReplaceable" subheader={true} />
 
-Returns a boolean value telling whether the kind of a given even is a parameterized replaceable event, i.e. is in the kind range 30000-39999
-
-```js
-let myEvent = new NDKEvent(opts);
-let eventIsParamReplaceable = isParamReplaceable(myEvent);
-```
+Returns a boolean value telling whether the kind of a given event is a parameterized replaceable event, i.e. is in the kind range 30000-39999
 
 #### Parameters
 

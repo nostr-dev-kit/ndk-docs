@@ -10,7 +10,7 @@ Represents a user's profile
 
 | Name | Description | Type | Required? |
 | :------ | :----- | :----- | :----- |
-| `about` | About content from profile | `string` | `Optional` |
+| `about` | Text about the user | `string` | `Optional` |
 | `banner` | A URL string of where to find the banner image | `string` | `Optional` |
 | `bio` | The user's bio | `string` | `Optional` |
 | `displayName` | The preferred name to display for a user | `string` | `Optional` |
@@ -23,7 +23,7 @@ Represents a user's profile
 
 <SectionHeader title="about" subheader={true} />
 
-About content.
+Text about the user.
 
 <SectionHeader title="banner" subheader={true} />
 
