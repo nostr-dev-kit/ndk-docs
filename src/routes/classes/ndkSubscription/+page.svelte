@@ -9,6 +9,16 @@
             sublinks: [{ title: 'constructor', url: '#constructor' }]
         },
         {
+            title: 'Emitter',
+            url: '#Emitter',
+            sublinks: [
+                { title: 'event', url: '#event' },
+                { title: 'event:dup', url: '#event:dup' },
+                { title: 'eose', url: '#eose' },
+                { title: 'close', url: '#close' }
+            ]
+        },
+        {
             title: 'Properties',
             url: '#Properties',
             sublinks: [

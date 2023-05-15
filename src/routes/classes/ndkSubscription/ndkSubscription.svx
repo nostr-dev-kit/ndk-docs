@@ -4,22 +4,144 @@
 
 # NDKSubscription
 
-This is the NDKSubscription class.
+Represents a subscription to an NDK event stream. `NDKSubscription#event` is emitted when an event is received by the subscription.
 
 <SectionHeader title="Constructor" />
 
 <SectionHeader title="constructor" subheader={true} />
 
+```js
+const ndkSub = new NDKSubscription(ndk, filter, opts?, relaySet?, subId?);
+```
+
+#### Parameters
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `ndk` | An instance of NDK | `NDK` |
+| `filter` | A filter for which events you want | `NDKFilter` |
+| `opts` | Subscription options | [`NDKSubscriptionOptions`](/interfaces/ndkSubscriptionOptions) |
+| `relaySet` | The set of relays to connect to | `NDKRelaySet` |
+| `subId` | A string identifier for the subscription | `string` |
+
+Learn more about [`NDKSubscriptionOptions` here](/interfaces/ndkSubscriptionOptions).
+
+<SectionHeader title="Emitter" />
+
+Any time an event is received from a relay for a given subscription, `NDKSubscription` emits an event.
+
+| Name | Description |
+| :------ | :----- |
+| [`event`](#event) | Emitted when an event is received by the subscription |
+| [`event:dup`](#event:dup) | Emitted when a duplicate event is received by the subscription |
+| [`eose`](#eose) | Emitted when all relays have reached the end of the event stream |
+| [`close`](#close) | Emitted when the subscription is closed |
+
+<SectionHeader title="event" subheader={true} />
+
+Emitted when an event is received by the subscription
+
+#### Parameters
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `event` | The event received | `NDKEvent`
+| `relay` | The relay that received the event | `NDKRelay`
+| `subscription` | The subscription that received the event | `NDKSubscription`
+
+
+<SectionHeader title="event:dup" subheader={true} />
+
+Emitted when a duplicate event is received by the subscription.
+
+#### Parameters
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `event` | The event received | `NDKEvent`
+| `relay` | The relay that received the event | `NDKRelay`
+| `subscription` | The subscription that received the event | `NDKSubscription`
+| `timeSinceFirstSeen` | The time elapsed since the first time the event was seen. | `number`
+
+
+<SectionHeader title="eose" subheader={true} />
+
+Emitted when all relays have reached the end of the event stream.
+
+#### Parameters
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `subscription` | The subscription that received the event | `NDKSubscription`
+
+<SectionHeader title="close" subheader={true} />
+
+Emitted when the subscription is closed.
+
+#### Parameters
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `subscription` | The subscription that received the event | `NDKSubscription`
+
 <SectionHeader title="Properties" />
 
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| [`filter`](#filter) | `Readonly`: A set of users that the user follows | `Promise<Set<NDKUser>>` |
+| [`ndk`](#ndk) | The instance of `NDK` used to instantiate the user | `NDK` |
+| [`opts`](#opts) | The options passed on instantiation | `NDKSubscriptionOptions` |
+| [`relaySet`](#relaySet) | The `RelaySet` being used for this subscription | `NDKRelaySet` |
+| [`relaySubscriptions`](#relaySubscriptions) | A map of relays and their subscriptions | `Map<NDKRelay, Sub>` |
+| [`subId`](#subId) | A string identifier for the subscription | `string` |
+
 <SectionHeader title="filter" subheader={true} />
+
+`Readonly`: The filters used for this subscription.
+
+#### Returns
+`NDKFilter`
+
 <SectionHeader title="ndk" subheader={true} />
+
+The instance of `NDK` used on instantiation.
+
+#### Returns
+`NDK`
+
 <SectionHeader title="opts" subheader={true} />
+
+`Readonly`: The `NDKSubscriptionOptions` passed on instantiation.
+
+#### Returns
+`NDKSubscriptionOptions`
+
 <SectionHeader title="relaySet" subheader={true} />
+
+The `RelaySet` being used for this subscription.
+
+#### Returns
+
+`NDKRelaySet`
+
 <SectionHeader title="relaySubscriptions" subheader={true} />
+
+A map of relays and their subscriptions
+
+#### Returns
+
+`Map<NDKRelay, Sub>`
+
 <SectionHeader title="subId" subheader={true} />
 
+A string identifier for the subscription
+
+#### Returns
+`string`
+
 <SectionHeader title="Methods" />
+
+
 
 <SectionHeader title="eoseReceived" subheader={true} />
 <SectionHeader title="eventReceived" subheader={true} />

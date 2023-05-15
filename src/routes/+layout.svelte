@@ -47,7 +47,7 @@
 
     <div class="z-10 grow">
         <Header />
-        <div class="mainContent p-8 grow mb-20 flex flex-row gap-8 mx-auto">
+        <div class="mainContent p-8 md:pl-12 grow mb-20 flex flex-row gap-8 mx-auto">
             <slot />
         </div>
         <Footer />

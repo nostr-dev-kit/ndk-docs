@@ -8,13 +8,13 @@
 </script>
 
 {#if subheader}
-    <h3 id={stringified} class="sectionHeader flex flex-row gap-2 items-center scroll-mt-20">
-        <a href={`#${stringified}`}><LinkIcon /></a>
+    <h3 id={stringified} class="sectionHeader">
+        <a href={`#${stringified}`} class="linkIcon hidden"><LinkIcon /></a>
         {title}
     </h3>
 {:else}
-    <h2 id={stringified} class="sectionHeader flex flex-row gap-2 items-center scroll-mt-20">
-        <a href={`#${stringified}`}><LinkIcon /></a>
+    <h2 id={stringified} class="sectionHeader">
+        <a href={`#${stringified}`} class="linkIcon hidden"><LinkIcon /></a>
         {title}
     </h2>
 {/if}

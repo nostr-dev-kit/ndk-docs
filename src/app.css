@@ -40,3 +40,14 @@ a {
 .a {
     @apply transition-all;
 }
+
+.sectionHeader {
+    @apply flex flex-row gap-2 items-center scroll-mt-20 relative;
+}
+.sectionHeader:hover > .linkIcon {
+    @apply flex p-2;
+}
+
+.sectionHeader > .linkIcon {
+    @apply absolute -left-8;
+}
