@@ -12,11 +12,10 @@
             title: 'Properties',
             url: '#Properties',
             sublinks: [
-                { title: 'cacheAdapter', url: '#cacheAdapter' },
-                { title: 'debug', url: '#debug' },
-                { title: 'explicitRelayUrls', url: '#explicitRelayUrls' },
-                { title: 'pool', url: '#pool' },
-                { title: 'signer', url: '#signer' }
+                { title: 'activeSubscriptions', url: '#activeSubscriptions' },
+                { title: 'complaining', url: '#complaining' },
+                { title: 'scores', url: '#scores' },
+                { title: 'url', url: '#pool' }
             ]
         },
         {
