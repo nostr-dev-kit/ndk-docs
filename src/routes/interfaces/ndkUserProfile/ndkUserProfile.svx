@@ -8,13 +8,53 @@ Represents a user's profile
 
 <SectionHeader title="Properties" />
 
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `about` | About content from profile | `string` | `Optional` |
+| `banner` | A URL string of where to find the banner image | `string` | `Optional` |
+| `bio` | The user's bio | `string` | `Optional` |
+| `displayName` | The preferred name to display for a user | `string` | `Optional` |
+| `image` | A URL string of where to find a profile image | `string` | `Optional` |
+| `lud06` | The signature of the event | `string` | `Optional` |
+| `lud16` | The subject of the event | `string` | `Optional` |
+| `name` | Name of the user | `string` | `Optional` |
+| `nip05` | A NIP05 address for the user | `string` | `Optional` |
+| `zapService` | The zap service the user is using | `string` | `Optional` |
+
 <SectionHeader title="about" subheader={true} />
+
+About content.
+
 <SectionHeader title="banner" subheader={true} />
+
+A URL string of where to find the banner image.
+
 <SectionHeader title="bio" subheader={true} />
+
+The user's bio.
+
 <SectionHeader title="displayName" subheader={true} />
+
+The preferred name to display for a user.
+
 <SectionHeader title="image" subheader={true} />
+
+A URL string of where to find a profile image.
+
 <SectionHeader title="lud06" subheader={true} />
+
+
 <SectionHeader title="lud16" subheader={true} />
+
+
 <SectionHeader title="name" subheader={true} />
+
+The user's name. Default to showing `displayName` first.
+
 <SectionHeader title="nip05" subheader={true} />
+
+The NIP05 verification address.
+
 <SectionHeader title="zapService" subheader={true} />
+
+The zap service for a given user.

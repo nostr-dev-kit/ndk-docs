@@ -4,6 +4,25 @@
 
 # NDK
 
+<SectionHeader title="Constructor" />
+
+<SectionHeader title="constructor" subheader={true} />
+
+```js
+let ndk = new NDK(NDKConstructorParams);
+```
+
+#### Parameters
+
+`NDKConstructorParams` is an object with the following properties:
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `cacheAdapter` | an instance of `NDKCacheAdapter` | `NDKCacheAdapter` | `Optional` |
+| `debug` | an instance of `Debugger` | `Debugger` | `Optional` |
+| `explicitRelayUrls` | an instance of `NDKCacheAdapter` | `string[]` | `Optional` |
+| `signer` | an instance of `NDKSigner` | `NDKSigner` | `Optional` |
+
 This is the default NDK class. Usually you should instantiate a single NDK instance in your app. This instance will track the state of all relays connected, explicity and otherwise.
 
 <SectionHeader title="Properties" />
@@ -37,27 +56,7 @@ Optional: An instnace of NDKPool, this is the pool of relay connections that NDK
 Optional: An instance of NDKSigner, this is the signer strategy that will be used when attempting to sign events.
 
 
-## Methods
-
-<SectionHeader title="constructor" subheader={true} />
-
-Create a new NDK instance:
-
-```js
-let ndk = new NDK(NDKConstructorParams);
-```
-
-#### Parameters
-
-`NDKConstructorParams` is an object with the following properties:
-
-| Name | Description | Type | Required? |
-| :------ | :----- | :----- | :----- |
-| `cacheAdapter` | an instance of `NDKCacheAdapter` | `NDKCacheAdapter` | `Optional` |
-| `debug` | an instance of `Debugger` | `Debugger` | `Optional` |
-| `explicitRelayUrls` | an instance of `NDKCacheAdapter` | `string[]` | `Optional` |
-| `signer` | an instance of `NDKSigner` | `NDKSigner` | `Optional` |
-
+<SectionHeader title="Methods" />
 
 <SectionHeader title="assertSigner" subheader={true} />
 
