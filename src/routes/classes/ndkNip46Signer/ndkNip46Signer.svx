@@ -17,22 +17,22 @@ const remoteSigner = new NDKNip46Signer(ndk, remotePubkey, localSigner)
 
 #### Parameters
 
-| Name | Description | Type |
-| :------ | :------ | :------ |
-| `ndk` | The NDK instance to use | `NDK`
-| `remotePubkey` | The public key of the npub that you want to published as | `string` |
-| `localSigner?` | The signer that will be used to request events to be signed | `NDKSigner` |
+| Name | Description | Type | Required? |
+| :------ | :------ | :------ | :------ |
+| `ndk` | The NDK instance to use | `NDK` | Required |
+| `remotePubkey` | The public key of the npub that you want to published as | `string` | Required |
+| `localSigner` | The signer that will be used to request events to be signed | `NDKSigner` | Optional |
 
 
 <SectionHeader title="Properties" />
 
-<SectionHeader title="localSigner" subheader={true} />
-
-Required: An instance of NDKSigner
-
 <SectionHeader title="remotePubkey" subheader={true} />
 
 Required: This is the public key of the npub/user that you want to publish on behalf of.
+
+<SectionHeader title="localSigner" subheader={true} />
+
+Optional: An instance of NDKSigner
 
 <SectionHeader title="Methods" />
 

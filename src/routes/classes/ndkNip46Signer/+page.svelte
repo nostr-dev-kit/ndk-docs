@@ -12,8 +12,8 @@
             title: 'Properties',
             url: '#Properties',
             sublinks: [
-                { title: 'localSigner', url: '#localSigner' },
-                { title: 'remotePubkey', url: '#remotePubkey' }
+                { title: 'remotePubkey', url: '#remotePubkey' },
+                { title: 'localSigner', url: '#localSigner' }
             ]
         },
         {
