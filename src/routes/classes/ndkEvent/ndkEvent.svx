@@ -18,8 +18,8 @@ new NDKEvent(ndk?, event?)
 
 | Name | Description | Type | Required? |
 | :------ | :----- | :----- | :----- |
-| `ndk` | An NDK instance | NDK | `Optional` |
-| `event` | A NostrEvent shaped object | NostrEvent | `Optional` |
+| `ndk` | An NDK instance | `NDK` | `Optional` |
+| `event` | A NostrEvent shaped object | `NostrEvent` | `Optional` |
 
 #### Returns
 
@@ -101,7 +101,7 @@ let myNostrEvent = ndkEventInstance.toNostrEvent(pubkey: '1739d937dc8c0c7370aa27
 
 | Name | Description | Type | Required? |
 | :------ | :----- | :----- | :----- |
-| `pubkey` | The pubkey of the event author | string | `Optional` |
+| `pubkey` | The pubkey of the event author | `string` | `Optional` |
 
 #### Returns
 
@@ -123,7 +123,7 @@ ndkEvent.getMatchingTags("p")
 
 | Name | Description | Type | Required? |
 | :------ | :----- | :----- | :----- |
-| `tagName` | The name of the tag you're looking for | string | `Required` |
+| `tagName` | The name of the tag you're looking for | `string` | `Required` |
 
 #### Returns
 

@@ -10,6 +10,8 @@ NDKNip07Signer implements the NDKSigner interface for signing Nostr events with 
 
 <SectionHeader title="constructor" subheader={true} />
 
+This will not attempt any signatures immediately but will throw an error if the `window.nostr` object isn't available when it's called.
+
 ```js
 const nip07Signer = new NDKNip07Signer();
 ```
@@ -22,8 +24,73 @@ Blocks until the signer is ready and returns the associated NDKUser.
 
 ### Returns
 
+`Promise<NDKUser>`
 
 <SectionHeader title="decrypt" subheader={true} />
+
+Decrypts a passed value using the sender's pubkey. This is used, for example, in encrypted DMs.
+
+```js
+const nip07Signer = new NDKNip07Signer();
+let decryptedString = nip07Signer.decrypt(sendingUser, valueToDecrypt);
+```
+
+#### Params
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `sender` | The sender | `NDKUser` | `Required` |
+| `value` | The value to decrypt | `string` | `Required` |
+
+#### Returns
+
+`Promise<string>`
+
+
 <SectionHeader title="encrypt" subheader={true} />
+
+Encrypts a passed value using the recipients pubkey. This is used, for example, in encrypted DMs.
+
+```js
+const nip07Signer = new NDKNip07Signer();
+let encryptedString = nip07Signer.encrypt(recipientUser, valueToEncrypt);
+```
+
+#### Params
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `recipient` | The recipient user | `NDKUser` | `Required` |
+| `value` | The value to encrypt | `string` | `Required` |
+
+#### Returns
+
+`Promise<string>`
+
+
 <SectionHeader title="sign" subheader={true} />
+
+Blocks until the user signs the given Nostr event and returns the signature.
+
+```js
+const nip07Signer = new NDKNip07Signer();
+let sig = nip07Signer.sign(myEvent);
+```
+
+#### Params
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `event` | The event to sign | `NDKEvent` | `Required` |
+
+#### Returns
+
+`string`
+
 <SectionHeader title="user" subheader={true} />
+
+The `getter` for the User property.
+
+#### Returns
+
+`Promise<NDKUser>`
