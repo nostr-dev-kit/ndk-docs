@@ -4,15 +4,25 @@
 
 # NDKNip07Signer
 
-This is the NDKNip07Signer class.
+NDKNip07Signer implements the NDKSigner interface for signing Nostr events with a NIP-07 browser extension (e.g., getalby, nos2x).
 
 <SectionHeader title="Constructor" />
 
 <SectionHeader title="constructor" subheader={true} />
 
+```js
+const nip07Signer = new NDKNip07Signer();
+```
+
 <SectionHeader title="Methods" />
 
 <SectionHeader title="blockUntilReady" subheader={true} />
+
+Blocks until the signer is ready and returns the associated NDKUser.
+
+### Returns
+
+
 <SectionHeader title="decrypt" subheader={true} />
 <SectionHeader title="encrypt" subheader={true} />
 <SectionHeader title="sign" subheader={true} />

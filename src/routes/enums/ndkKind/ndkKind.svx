@@ -1,0 +1,81 @@
+<script lang='ts'>
+    import SectionHeader from '$lib/components/SectionHeader.svelte'
+</script>
+
+# NDKKind
+
+<SectionHeader title="Members" />
+
+Event kinds. As new event kinds are formalized in NIPs this list will continue to be updated.
+
+| Name | Number |
+| :------ | :----- |
+| `AppSpecificData` | `30078` |
+| `Article` | `30023` |
+| `BadgeAward` | `8` |
+| `BadgeDefinition` | `30009` |
+| `CategorizedBookmarkList` | `30001` |
+| `CategorizedPeopleList` | `30000` |
+| `ChannelCreation` | `40` |
+| `ChannelHideMessage` | `43` |
+| `ChannelMessage` | `42` |
+| `ChannelMetadata` | `41` |
+| `ChannelMuteUser` | `44` |
+| `ClientAuth` | `22242` |
+| `Contacts` | `3` |
+| `EncryptedDirectMessage` | `4` |
+| `EventDeletion` | `5` |
+| `Metadata` | `0` |
+| `MuteList` | `10000`|
+| `NostrConnect` | `24133` |
+| `PinList` | `10001` |
+| `ProfileBadge` | `30008` |
+| `Reaction` | `7` |
+| `RecommendRelay` | `2` |
+| `RelayList` | `10002` |
+| `Report` | `1984` |
+| `Repost` | `6` |
+| `Text` | `1` |
+| `Zap` | `9735` |
+| `ZapRequest` | `9734` |
+
+
+<SectionHeader title="Methods" />
+
+<SectionHeader title="isReplaceable" subheader={true} />
+
+Returns a boolean value telling whether the kind of a given even is a replaceable event, i.e. is in the kind range 10000-29999
+
+```js
+let myEvent = new NDKEvent(opts);
+let eventIsReplaceable = isReplaceable(myEvent);
+```
+
+#### Parameters
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `event` | An instnace of NDKEvent | NDKEvent | `Required` |
+
+#### Returns
+
+`boolean`
+
+<SectionHeader title="isParamReplaceable" subheader={true} />
+
+Returns a boolean value telling whether the kind of a given even is a parameterized replaceable event, i.e. is in the kind range 30000-39999
+
+```js
+let myEvent = new NDKEvent(opts);
+let eventIsParamReplaceable = isParamReplaceable(myEvent);
+```
+
+#### Parameters
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `event` | An instnace of NDKEvent | NDKEvent | `Required` |
+
+#### Returns
+
+`boolean`

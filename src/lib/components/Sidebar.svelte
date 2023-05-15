@@ -17,17 +17,22 @@
             { href: '/classes/ndkSubscriptionGroup', linkText: 'NDKSubscriptionGroup' },
             { href: '/classes/ndkUser', linkText: 'NDKUser' }
         ],
+        enums: [
+            { href: '/enums/ndkKind', linkText: 'NDKKind' },
+            { href: '/enums/ndkRelayStatus', linkText: 'NDKRelayStatus' },
+            { href: '/enums/ndkSubscriptionCacheUsage', linkText: 'NDKSubscriptionCacheUsage' }
+        ],
         interfaces: [
             { href: '/interfaces/getUserParams', linkText: 'getUserParams' },
             { href: '/interfaces/IEventHandlingStrategy', linkText: 'IEventHandlingStrategy' },
-            { href: '/interfaces/NDKCacheAdapter', linkText: 'NDKCacheAdapter' },
-            { href: '/interfaces/NDKConstructorParams', linkText: 'NDKConstructorParams' },
-            { href: '/interfaces/NDKFilterOptions', linkText: 'NDKFilterOptions' },
-            { href: '/interfaces/NDKRelayConnectionStats', linkText: 'NDKRelayConnectionStats' },
-            { href: '/interfaces/NDKSigner', linkText: 'NDKSigner' },
-            { href: '/interfaces/NDKSubscriptionOptions', linkText: 'NDKSubscriptionOptions' },
+            { href: '/interfaces/ndkCacheAdapter', linkText: 'NDKCacheAdapter' },
+            { href: '/interfaces/ndkConstructorParams', linkText: 'NDKConstructorParams' },
+            { href: '/interfaces/ndkFilterOptions', linkText: 'NDKFilterOptions' },
+            { href: '/interfaces/ndkRelayConnectionStats', linkText: 'NDKRelayConnectionStats' },
+            { href: '/interfaces/ndkSigner', linkText: 'NDKSigner' },
+            { href: '/interfaces/ndkSubscriptionOptions', linkText: 'NDKSubscriptionOptions' },
             { href: '/interfaces/ndkUserProfile', linkText: 'NDKUserProfile' },
-            { href: '/interfaces/NDKZapInvoice', linkText: 'NDKZapInvoice' }
+            { href: '/interfaces/ndkZapInvoice', linkText: 'NDKZapInvoice' }
         ],
         guides: [
             { href: '/', linkText: 'Getting started' },
@@ -59,6 +64,17 @@
     <h2 class="mb-2 font-semibold">Classes</h2>
     <ul class="nav text-base">
         {#each navLinks.classes as link}
+            <li>
+                <NavLink on:navLinkClicked href={link.href} linkText={link.linkText} />
+            </li>
+        {/each}
+    </ul>
+</div>
+
+<div class="navWrapper classes md:mt-10 ml-4">
+    <h2 class="mb-2 font-semibold">Enums</h2>
+    <ul class="nav text-base">
+        {#each navLinks.enums as link}
             <li>
                 <NavLink on:navLinkClicked href={link.href} linkText={link.linkText} />
             </li>

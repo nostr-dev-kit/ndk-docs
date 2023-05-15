@@ -1,0 +1,18 @@
+<script lang='ts'>
+    import SectionHeader from '$lib/components/SectionHeader.svelte'
+</script>
+
+# NDKRelayStatus
+
+<SectionHeader title="Members" />
+
+The status of a relay connection.
+
+| Name | Number |
+| :------ | :----- |
+| `CONNECTED` | `1` |
+| `CONNECTING` | `0` |
+| `DISCONNECTED` | `3` |
+| `DISCONNECTING` | `2` |
+| `RECONNECTING` | `4` |
+
