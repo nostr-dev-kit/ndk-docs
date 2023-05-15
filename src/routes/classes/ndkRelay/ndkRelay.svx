@@ -6,6 +6,8 @@
 
 The NDKRelay class represents a connection to a relay.
 
+Normally you would connect to relays via the `NDKRelaySet` interface instead of using this class directly.
+
 <SectionHeader title="Constructors" />
 <SectionHeader title="constructor" subheader={true} />
 
