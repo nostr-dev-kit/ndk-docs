@@ -1,0 +1,29 @@
+<script lang="ts">
+    import TableOfContents from '$lib/components/TableOfContents.svelte';
+    import MarkdownContent from './ndkNip07Signer.svx';
+
+    let tableOfContents: App.NavLink[] = [
+        {
+            title: 'Constructor',
+            url: '#constructor',
+            sublinks: [{ title: 'constructor', url: '#constructor' }]
+        },
+        {
+            title: 'Methods',
+            url: '#Methods',
+            sublinks: [
+                { title: 'blockUntilReady', url: '#blockUntilReady' },
+                { title: 'decrypt', url: '#decrypt' },
+                { title: 'encrypt', url: '#encrypt' },
+                { title: 'sign', url: '#sign' },
+                { title: 'user', url: '#user' }
+            ]
+        }
+    ];
+</script>
+
+<div class="contentWrapper">
+    <MarkdownContent />
+</div>
+
+<TableOfContents links={tableOfContents} />

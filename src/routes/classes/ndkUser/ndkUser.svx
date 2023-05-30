@@ -4,3 +4,136 @@
 
 # NDKUser
 
+Represents a pubkey.
+
+<SectionHeader title="Constructor" />
+
+<SectionHeader title="constructor" subheader={true} />
+
+Instantiates an `NDKUser` from a hexpubkey, an npub, or a NIP-05 value. At least one of the three values is required.
+
+You can also optionally pass in an array of relay URLs where the user can be found.
+
+Note, this does not automatically fetch any profile information.
+
+```js
+const jeff = new NDKUser({npub: 'npub1zuuajd7u3sx8xu92yav9jwxpr839cs0kc3q6t56vd5u9q033xmhsk6c2uc'})
+```
+
+#### Parameters
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `NDKUserParams` | An instance of NDKUserParams | `NDKUserParams`
+
+The shape of `NDKUserParams` is as follows:
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `npub` | An npub string | `string` | Optional
+| `hexpubkey` | A hexpubkey string | `string` | Optional
+| `nip05` | An NIP-05 string | `string` | Optional
+| `relayUrls` | An array of relay URLs where the user might be found | `string[]` | Optional
+
+#### Returns
+
+`Promise<Set<NDKUser>>`
+
+<SectionHeader title="Properties" />
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| [`follows`](#follows) | A set of users that the user follows | `Promise<Set<NDKUser>>` |
+| [`ndk`](#ndk) | The instance of `NDK` used to instantiate the user | `NDK` |
+| [`npub`](#npub) | The npub value of the user | `string` |
+| [`profile`](#profile) | The user's profile info, an instance of `NDKUserProfile` | `NDKUserProfile` |
+| [`relayUrls`](#relayUrls) | The array of relay URLs passed in on creation | `string[]` |
+
+<SectionHeader title="follows" subheader={true} />
+
+A set of users that the user follows.
+
+#### Returns
+`Promise<Set<NDKUser>>`
+
+<SectionHeader title="ndk" subheader={true} />
+
+The instance of `NDK` used to instantiate the user.
+
+#### Returns
+`NDK`
+
+<SectionHeader title="npub" subheader={true} />
+
+The npub value of the user.
+
+#### Returns
+`<string>`
+
+<SectionHeader title="profile" subheader={true} />
+
+The user's profile information. An instance of `NDKUserProfile`.
+
+#### Returns
+`NDKUserProfile`
+
+<SectionHeader title="relayUrls" subheader={true} />
+
+The array of relay URLs strings passed in when instantiating the `NDKUser`.
+
+#### Returns
+
+`string[]`
+
+<SectionHeader title="Methods" />
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| [`fetchProfile`](#fetchProfile) | Fetch the user's profile information | `Promise<null\|Set<NDKEvent>>` |
+| [`hexpubkey`](#hexpubkey) | The hexpubkey of the user | `string` |
+| [`relayList`](#relayList) | The list of relays where this user was found | `Promise<Set<Event>>` |
+| [`fromNip05`](#fromNip05) | Instantiates an `NDKUser` from a NIP-05 value  | `Promise<NDKUser\|undefined>` |
+
+<SectionHeader title="fetchProfile" subheader={true} />
+
+Fetch the user's profile. This will return a set kind 0 events and will also set the `profile` property to the most recent kind 0 event data.
+
+```js
+const pablo = ndk.getUser({
+    npub: "npub1l2vyh47mk2p0qlsku7hg0vn29faehy9hy34ygaclpn66ukqp3afqutajft"
+});
+await pablo.fetchProfile();
+
+const pabloFullProfile = pablo.profile;
+```
+
+#### Returns
+`Promise<null | Set<NDKEvent>>`
+
+<SectionHeader title="hexpubkey" subheader={true} />
+
+The user's hexpubkey.
+
+#### Returns
+`string`
+
+<SectionHeader title="relayList" subheader={true} />
+
+Returns a list of relays where this user has been found.
+
+#### Returns
+`Promise<Set<Event>>`
+
+<SectionHeader title="fromNip05" subheader={true} />
+
+Returns an instance of `NDKUser` given a NIP-05 string.
+
+#### Parameters
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `nip05Id` | The full NIP-05 ID string | `string`
+
+#### Returns
+
+`Promise<NDKUser | undefined>`

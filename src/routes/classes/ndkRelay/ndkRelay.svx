@@ -4,8 +4,169 @@
 
 # NDKRelay
 
-This is the default NDK class. Usually you should instantiate a single NDK instance in your app. This instance will track the state of all relays connected, explicity and otherwise.
+The NDKRelay class represents a connection to a relay.
+
+Normally you would connect to relays via the `NDKRelaySet` interface instead of using this class directly.
+
+<SectionHeader title="Constructors" />
+<SectionHeader title="constructor" subheader={true} />
+
+```js
+const relay = new NDKRelay(relayUrl);
+```
+
+#### Parameters
+
+| Name | Description | Type | Required? |
+| :------ | :------ | :------ | :------ |
+| `url` | The URL of the relay to connect to | `string` | Required |
+
 
 <SectionHeader title="Properties" />
 
-<SectionHeader title="cacheAdapter" subheader={true} />
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| [`activeSubscriptions`](#activeSubscriptions) | Active subscriptions this relay is connected to | `Set<NDKSubscription>`
+| [`complaining`](#complaining) | Whether or not the relay is complaining | `boolean`
+| [`scores`](#scores) | Readonly: Not yet implemented | `Map<NDKUser, number>`
+| [`url`](#url) | Readonly: The url the relay connected to | `string`
+
+
+<SectionHeader title="activeSubscriptions" subheader={true} />
+
+Active subscriptions this relay is connected to.
+
+#### Returns
+
+`Set<NDKSubscription>`
+
+
+<SectionHeader title="complaining" subheader={true} />
+
+Whether or not the relay is complaining.
+
+#### Returns
+
+`boolean`
+
+<SectionHeader title="scores" subheader={true} />
+
+`Readonly`: Not yet implemented.
+
+#### Returns
+
+`Map<NDKUser, number>`
+
+<SectionHeader title="url" subheader={true} />
+
+`Readonly`: The url of the relay connected to.
+
+#### Returns
+
+`string`
+
+<SectionHeader title="Accessors" />
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| [`connectionStats`](#connectionStats) | Connection stats on the current relay connection. | `NDKRelayConnectionStats`
+| [`status`](#status) | The current status of the relay connection. | `NDKRelayStatus`
+
+<SectionHeader title="connectionStats" subheader={true} />
+
+Connection stats on the current relay connection.
+
+#### Returns
+
+`NDKRelayConnectionStats`
+
+<SectionHeader title="status" subheader={true} />
+
+The current status of the relay connection.
+
+#### Returns
+
+`NDKRelayStatus`
+
+<SectionHeader title="Methods" />
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| [`connect`](#connect) | Connects to the relay. | `Promise<void>`
+| [`disconnect`](#disconnect) | Disconnects from the relay. | `void`
+| [`handleNotice`](#handleNotice) | Handles a passed in notice. | `Promise<void>`
+| [`publish`](#publish) | Publishes an event to the relay. | `Promise<void>`
+| [`scoreSlowerEvent`](#scoreSlowerEvent) | The current status of the relay connection. | `void`
+| [`subscribe`](#subscribe) | The current status of the relay connection. | `void`
+
+<SectionHeader title="connect" subheader={true} />
+
+Connects to the relay.
+
+#### Returns
+
+`Promise<void>`
+
+<SectionHeader title="disconnect" subheader={true} />
+
+Disconnects from the relay.
+
+#### Returns
+
+`void`
+
+<SectionHeader title="handleNotice" subheader={true} />
+
+Handles a passed in notice.
+
+#### Parameters
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `notice` | The notice returned from the relay. | `string`
+
+#### Returns
+
+`Promise<void>`
+
+<SectionHeader title="publish" subheader={true} />
+
+Publish an event to the relay.
+
+#### Parameters
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `event` | An instance of NDKEvent | `NDKEvent`
+
+#### Returns
+
+`Promise<void>`
+
+<SectionHeader title="scoreSlowerEvent" subheader={true} />
+
+Called when a relay reponds with an event but the relay wasn't the fastest relay to respond in a given `NDKRealySet`.
+
+#### Parameters
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `timeDiffInMs` | The time in milliseconds between the fastest relay and this relay. | `number`
+
+#### Returns
+
+`void`
+
+<SectionHeader title="subscribe" subheader={true} />
+
+Subscribes to a subscription.
+
+#### Parameters
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `subscription` | An instance of `NDKSubscription`. | `NDKSubscription`
+
+#### Returns
+
+`Sub`

@@ -4,8 +4,13 @@
 
     let tableOfContents: App.NavLink[] = [
         {
+            title: 'Constructor',
+            url: '#Constructor',
+            sublinks: [{ title: 'constructor', url: '#constructor' }]
+        },
+        {
             title: 'Properties',
-            url: '#properties',
+            url: '#Properties',
             sublinks: [
                 { title: 'content', url: '#content' },
                 { title: 'created_at', url: '#created_at' },
@@ -19,9 +24,8 @@
         },
         {
             title: 'Methods',
-            url: '#methods',
+            url: '#Methods',
             sublinks: [
-                { title: 'constructor', url: '#constructor' },
                 { title: 'rawEvent', url: '#rawEvent' },
                 { title: 'toNostrEvent', url: '#toNostrEvent' },
                 { title: 'isReplaceable', url: '#isReplaceable' },

@@ -1,6 +1,6 @@
 <script lang="ts">
     import TableOfContents from '$lib/components/TableOfContents.svelte';
-    import MarkdownContent from './ndkUser.svx';
+    import MarkdownContent from './ndkNip46Backend.svx';
 
     let tableOfContents: App.NavLink[] = [
         {
@@ -12,21 +12,20 @@
             title: 'Properties',
             url: '#Properties',
             sublinks: [
-                { title: 'follows', url: '#follows' },
-                { title: 'ndk', url: '#ndk' },
-                { title: 'npub', url: '#npub' },
-                { title: 'profile', url: '#profile' },
-                { title: 'relayUrls', url: '#relayUrls' }
+                { title: 'debug', url: '#debug' },
+                { title: 'handlers', url: '#handlers' },
+                { title: 'localUser', url: '#localUser' },
+                { title: 'ndk', url: '#ndk' }
             ]
         },
         {
             title: 'Methods',
             url: '#Methods',
             sublinks: [
-                { title: 'fetchProfile', url: '#fetchProfile' },
-                { title: 'hexpubkey', url: '#hexpubkey' },
-                { title: 'relayList', url: '#relayList' },
-                { title: 'fromNip05', url: '#fromNip05' }
+                { title: 'pubkeyAllowed', url: '#pubkeyAllowed' },
+                { title: 'setStrategy', url: '#setStrategy' },
+                { title: 'signEvent', url: '#signEvent' },
+                { title: 'start', url: '#start' }
             ]
         }
     ];

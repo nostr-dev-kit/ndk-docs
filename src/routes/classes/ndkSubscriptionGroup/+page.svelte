@@ -1,6 +1,6 @@
 <script lang="ts">
     import TableOfContents from '$lib/components/TableOfContents.svelte';
-    import MarkdownContent from './ndkUser.svx';
+    import MarkdownContent from './ndkSubscriptionGroup.svx';
 
     let tableOfContents: App.NavLink[] = [
         {
@@ -12,21 +12,23 @@
             title: 'Properties',
             url: '#Properties',
             sublinks: [
-                { title: 'follows', url: '#follows' },
+                { title: 'filter', url: '#filter' },
                 { title: 'ndk', url: '#ndk' },
-                { title: 'npub', url: '#npub' },
-                { title: 'profile', url: '#profile' },
-                { title: 'relayUrls', url: '#relayUrls' }
+                { title: 'opts', url: '#opts' },
+                { title: 'relaySet', url: '#relaySet' },
+                { title: 'relaySubscriptions', url: '#relaySubscriptions' },
+                { title: 'subId', url: '#subId' }
             ]
         },
         {
             title: 'Methods',
             url: '#Methods',
             sublinks: [
-                { title: 'fetchProfile', url: '#fetchProfile' },
-                { title: 'hexpubkey', url: '#hexpubkey' },
-                { title: 'relayList', url: '#relayList' },
-                { title: 'fromNip05', url: '#fromNip05' }
+                { title: 'eoseReceived', url: '#eoseReceived' },
+                { title: 'eventReceived', url: '#eventReceived' },
+                { title: 'groupableId', url: '#groupableId' },
+                { title: 'start', url: '#start' },
+                { title: 'stop', url: '#stop' }
             ]
         }
     ];

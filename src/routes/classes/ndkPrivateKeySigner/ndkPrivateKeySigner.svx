@@ -1,0 +1,115 @@
+<script lang='ts'>
+    import SectionHeader from '$lib/components/SectionHeader.svelte'
+</script>
+
+# NDKPrivateKeySigner
+
+This is the NDK PirvateKeySigner class.
+
+<SectionHeader title="Constructors" />
+
+<SectionHeader title="constructor" subheader={true} />
+
+```js
+const signer = new NDKPrivateKeySigner(privateKey);
+```
+
+#### Parameters
+
+| Name | Description | Type | Required? |
+| :------ | :------ | :------ | :------ |
+| `privateKey` | A private key | `string` | Optional |
+
+
+<SectionHeader title="Properties" />
+
+<SectionHeader title="privateKey" subheader={true} />
+
+The private key passed in when instantiating the signer.
+
+<SectionHeader title="Methods" />
+
+<SectionHeader title="blockUntilReady" subheader={true} />
+
+Blocks until the signer is ready and returns the associated NDKUser.
+
+### Returns
+
+`Promise<NDKUser>`
+
+<SectionHeader title="decrypt" subheader={true} />
+
+Decrypts a passed value using the sender's pubkey. This is used, for example, in encrypted DMs.
+
+```js
+const privateKeySigner = new NDKPrivateKeySigner();
+let decryptedString = privateKeySigner.decrypt(sendingUser, valueToDecrypt);
+```
+
+#### Params
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `sender` | The sender | `NDKUser` | `Required` |
+| `value` | The value to decrypt | `string` | `Required` |
+
+#### Returns
+
+`Promise<string>`
+
+
+<SectionHeader title="encrypt" subheader={true} />
+
+Encrypts a passed value using the recipients pubkey. This is used, for example, in encrypted DMs.
+
+```js
+const privateKeySigner = new NDKPrivateKeySigner();
+let encryptedString = privateKeySigner.encrypt(recipientUser, valueToEncrypt);
+```
+
+#### Params
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `recipient` | The recipient user | `NDKUser` | `Required` |
+| `value` | The value to encrypt | `string` | `Required` |
+
+#### Returns
+
+`Promise<string>`
+
+
+<SectionHeader title="sign" subheader={true} />
+
+Blocks until the user signs the given Nostr event and returns the signature.
+
+```js
+const privateKeySigner = new NDKPrivateKeySigner();
+let sig = privateKeySigner.sign(myEvent);
+```
+
+#### Params
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `event` | The event to sign | `NDKEvent` | `Required` |
+
+#### Returns
+
+`string`
+
+<SectionHeader title="user" subheader={true} />
+
+The `getter` for the User property.
+
+#### Returns
+
+`Promise<NDKUser>`
+
+<SectionHeader title="generate" subheader={true} />
+
+Generates a new private key and instantiates a signer.
+
+#### Returns
+
+`NDKPrivateKeySigner`

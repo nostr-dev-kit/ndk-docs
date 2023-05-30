@@ -4,44 +4,9 @@
 
 # NDK
 
-This is the default NDK class. Usually you should instantiate a single NDK instance in your app. This instance will track the state of all relays connected, explicity and otherwise.
-
-<SectionHeader title="Properties" />
-
-| Name | Description | Type | Required? |
-| :------ | :----- | :----- | :----- |
-| `cacheAdapter` | an instance of NDKCacheAdapter | `NDKCacheAdapter` | `Optional` |
-| `debug` | an instance of Debugger | `Debugger` | `Optional` |
-| `explicitRelayUrls` | an instance of NDKCacheAdapter | `string[]` | `Optional` |
-| `pool` | an instance of NDKPool | `NDKPool` | `Optional` |
-| `signer` | an instance of NDKSigner | `NDKSigner` | `Optional` |
-
-<SectionHeader title="cacheAdapter" subheader={true} />
-
-Optional: An instance of NDKCacheAdapter. NDKCacheAdapters help you cache Nostr data using different strategies.
-
-<SectionHeader title="debug" subheader={true} />
-
-Optional: Pass in your own instance of Debugger.
-
-<SectionHeader title="explicitRelayUrls" subheader={true} />
-
-Optional: An array of relay URLs as strings. These are the relays that NDK will attempt to connect to.
-
-<SectionHeader title="pool" subheader={true} />
-
-Optional: An instnace of NDKPool, this is the pool of relay connections that NDK uses when fetching data.
-
-<SectionHeader title="signer" subheader={true} />
-
-Optional: An instance of NDKSigner, this is the signer strategy that will be used when attempting to sign events.
-
-
-## Methods
+<SectionHeader title="Constructor" />
 
 <SectionHeader title="constructor" subheader={true} />
-
-Create a new NDK instance:
 
 ```js
 let ndk = new NDK(NDKConstructorParams);
@@ -53,11 +18,74 @@ let ndk = new NDK(NDKConstructorParams);
 
 | Name | Description | Type | Required? |
 | :------ | :----- | :----- | :----- |
-| `cacheAdapter` | an instance of NDKCacheAdapter | `NDKCacheAdapter` | `Optional` |
-| `debug` | an instance of Debugger | `Debugger` | `Optional` |
-| `explicitRelayUrls` | an instance of NDKCacheAdapter | `string[]` | `Optional` |
-| `signer` | an instance of NDKSigner | `NDKSigner` | `Optional` |
+| `cacheAdapter` | an instance of `NDKCacheAdapter` | `NDKCacheAdapter` | `Optional` |
+| `debug` | an instance of `Debugger` | `Debugger` | `Optional` |
+| `explicitRelayUrls` | an instance of `NDKCacheAdapter` | `string[]` | `Optional` |
+| `signer` | an instance of `NDKSigner` | `NDKSigner` | `Optional` |
 
+This is the default NDK class. Usually you should instantiate a single NDK instance in your app. This instance will track the state of all relays connected, explicity and otherwise.
+
+<SectionHeader title="Properties" />
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| [`cacheAdapter`](#cacheAdapter) | an instance of `NDKCacheAdapter` | `NDKCacheAdapter` |
+| [`debug`](#debug) | an instance of `Debugger` | `Debugger` |
+| [`explicitRelayUrls`](#explicitRelayUrls) | an array of URLs of relays NDK will attempt to connect to | `string[]` |
+| [`pool`](#pool) | an instance of `NDKPool` | `NDKPool` |
+| [`signer`](#signer) | an instance of `NDKSigner` | `NDKSigner` |
+
+<SectionHeader title="cacheAdapter" subheader={true} />
+
+An instance of NDKCacheAdapter. NDKCacheAdapters help you cache Nostr data using different strategies.
+
+#### Returns
+
+`NDKCacheAdapter`
+
+<SectionHeader title="debug" subheader={true} />
+
+Returns an instance of Debugger.
+
+#### Returns
+
+`Debugger`
+
+<SectionHeader title="explicitRelayUrls" subheader={true} />
+
+An array of relay URLs as strings. These are the relays that NDK will attempt to connect to.
+
+#### Returns
+
+`NDKCacheAdapter`
+
+<SectionHeader title="pool" subheader={true} />
+
+An instnace of NDKPool, this is the pool of relay connections that NDK uses when fetching data.
+
+#### Returns
+
+`NDKPool`
+
+<SectionHeader title="signer" subheader={true} />
+
+An instance of NDKSigner, this is the signer strategy that will be used when attempting to sign events.
+
+#### Returns
+
+`NDKSigner`
+
+<SectionHeader title="Methods" />
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| [`assertSigner`](#assertSigner) | Checks that a signer is available | `Promise<void>` |
+| [`connect`](#connect) | Connect to a relay with an optional timeout | `Promise<void>` |
+| [`fetchEvent`](#fetchEvent) | Fetch a single event matching a set of filters | `Promise<NDKEvent>` |
+| [`fetchEvents`](#fetchEvents) | Fetch multiple events matching a set of filters | `Promise<Set<NDKEvent>>` |
+| [`getUser`](#getUser) | Instantiates an instance of `NDKUser` | `NDKUser` |
+| [`publish`](#publish) | Publishes the event to connected relays | `Promise<void>` |
+| [`subscribe`](#subscribe) | Opens a persistent connection to relays for a specific type of event(s) | `NDKSubscription` |
 
 <SectionHeader title="assertSigner" subheader={true} />
 
@@ -85,7 +113,7 @@ ndk.connect(2000);
 
 | Name | Description | Type | Required? |
 | :------ | :----- | :----- | :----- |
-| `timeoutMs` | A timeout in milliseconds | number | `Optional` |
+| `timeoutMs` | A timeout in milliseconds | `number` | `Optional` |
 
 #### Returns
 
@@ -106,8 +134,8 @@ let jeffProfile = await ndk.fetchEvent({kinds: [0], authors: ['1739d937dc8c0c737
 
 | Name | Description | Type | Required? |
 | :------ | :----- | :----- | :----- |
-| `filter` | An instance of NDKFilter | NDKFilter | `Required` |
-| `opts` | An instance of NDKFilterOptions | NDKFilterOptions | `Optional` |
+| `filter` | An instance of `NDKFilter` | `NDKFilter` | `Required` |
+| `opts` | An instance of `NDKFilterOptions` | `NDKFilterOptions` | `Optional` |
 
 
 #### Returns
@@ -129,8 +157,8 @@ let jeffNotes = await ndk.fetchEvents({kinds: [1], authors: ['1739d937dc8c0c7370
 
 | Name | Description | Type | Required? |
 | :------ | :----- | :----- | :----- |
-| `filter` | An instance of NDKFilter | NDKFilter | `Required` |
-| `opts` | An instance of NDKFilterOptions | NDKFilterOptions | `Optional` |
+| `filter` | An instance of `NDKFilter` | `NDKFilter` | `Required` |
+| `opts` | An instance of `NDKFilterOptions` | `NDKFilterOptions` | `Optional` |
 
 
 #### Returns
@@ -156,7 +184,7 @@ let jeff = ndk.getUser({hexpubkey: '1739d937dc8c0c7370aa27585938c119e25c41f6c441
 
 | Name | Description | Type | Required? |
 | :------ | :----- | :----- | :----- |
-| `opts` | An instance of NDKUserParams | NDKUserParams | `Required` |
+| `opts` | An instance of `NDKUserParams` | `NDKUserParams` | `Required` |
 
 
 #### Returns
@@ -190,7 +218,7 @@ ndk.publish(event);
 
 | Name | Description | Type | Required? |
 | :------ | :----- | :----- | :----- |
-| `event` | An NDKEvent instance | NDKEvent | `Required` |
+| `event` | An `NDKEvent` instance | `NDKEvent` | `Required` |
 
 
 #### Returns
@@ -213,8 +241,8 @@ let jeffNotesSub = ndk.subscribe({kinds: [1], authors: ['1739d937dc8c0c7370aa275
 
 | Name | Description | Type | Required? |
 | :------ | :----- | :----- | :----- |
-| `filter` | An instance of NDKFilter | NDKFilter | `Required` |
-| `opts` | An instance of NDKFilterOptions | NDKFilterOptions | `Optional` |
+| `filter` | An instance of `NDKFilter` | `NDKFilter` | `Required` |
+| `opts` | An instance of `NDKFilterOptions` | `NDKFilterOptions` | `Optional` |
 
 
 #### Returns

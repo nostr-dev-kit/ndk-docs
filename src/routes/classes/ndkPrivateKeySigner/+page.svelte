@@ -1,6 +1,6 @@
 <script lang="ts">
     import TableOfContents from '$lib/components/TableOfContents.svelte';
-    import MarkdownContent from './ndkUser.svx';
+    import MarkdownContent from './ndkPrivateKeySigner.svx';
 
     let tableOfContents: App.NavLink[] = [
         {
@@ -11,22 +11,18 @@
         {
             title: 'Properties',
             url: '#Properties',
-            sublinks: [
-                { title: 'follows', url: '#follows' },
-                { title: 'ndk', url: '#ndk' },
-                { title: 'npub', url: '#npub' },
-                { title: 'profile', url: '#profile' },
-                { title: 'relayUrls', url: '#relayUrls' }
-            ]
+            sublinks: [{ title: 'privateKey', url: '#privateKey' }]
         },
         {
             title: 'Methods',
             url: '#Methods',
             sublinks: [
-                { title: 'fetchProfile', url: '#fetchProfile' },
-                { title: 'hexpubkey', url: '#hexpubkey' },
-                { title: 'relayList', url: '#relayList' },
-                { title: 'fromNip05', url: '#fromNip05' }
+                { title: 'blockUntilReady', url: '#blockUntilReady' },
+                { title: 'decrypt', url: '#decrypt' },
+                { title: 'encrypt', url: '#encrypt' },
+                { title: 'sign', url: '#sign' },
+                { title: 'user', url: '#user' },
+                { title: 'generate', url: '#generate' }
             ]
         }
     ];

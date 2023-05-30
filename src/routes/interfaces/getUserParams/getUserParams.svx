@@ -1,0 +1,13 @@
+<script lang='ts'>
+    import SectionHeader from '$lib/components/SectionHeader.svelte'
+</script>
+
+# GetUserParams
+
+<SectionHeader title="Properties" />
+
+<SectionHeader title="hexpubkey" subheader={true} />
+<SectionHeader title="nip05" subheader={true} />
+<SectionHeader title="npub" subheader={true} />
+<SectionHeader title="relayUrls" subheader={true} />
+

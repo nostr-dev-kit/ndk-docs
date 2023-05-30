@@ -1,0 +1,101 @@
+<script lang='ts'>
+    import SectionHeader from '$lib/components/SectionHeader.svelte'
+</script>
+
+# NDKRelaySet
+
+This is the NDKRelaySet class. A relay set is a group of relays. This grouping can be short-living, for a single REQ or can be long-lasting, for example for the explicit relay list the user has specified.
+
+Requests to relays should be sent through this interface.
+
+<SectionHeader title="Constructor" />
+<SectionHeader title="constructor" subheader={true} />
+
+```js
+const relaySet = new NDKRelaySet(relays, ndk);
+```
+
+#### Parameters
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `relays` | A set of relays to connect to. | `Set<NDKRelay>`
+| `ndk` | An instance of NDK. | `NDK`
+
+<SectionHeader title="Properties" />
+
+<SectionHeader title="relays" subheader={true} />
+
+`Readonly`: The set of relays connected to.
+
+#### Returns
+
+`Set<NDKRelay>`
+
+<SectionHeader title="Methods" />
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| [`getId`](#getId) | Calculates an ID of this specific combination of relays. | `string`
+| [`publish`](#publish) | Publishes an event to the set of relays. | `Promise<void>`
+| [`size`](#size) | The number of relays in the current set. | `number`
+| [`subscribe`](#subscribe) | Adds a subscription to this relay set. | `NDKSubscription`
+| [`fromRelayUrls`](#fromRelayUrls) | Creates an `NDKRelaySet` from a list of relay URLs. | `NDKRelayset`
+
+<SectionHeader title="getId" subheader={true} />
+
+Calculates an ID of this specific combination of relays.
+
+#### Returns
+
+`string`
+
+<SectionHeader title="publish" subheader={true} />
+
+Publish an event to the set of relays.
+
+#### Parameters
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `event` | An instance of NDKEvent | `NDKEvent`
+
+#### Returns
+
+`Promise<void>`
+
+<SectionHeader title="size" subheader={true} />
+
+The number of relays in the current set.
+
+#### Returns
+`number`
+
+<SectionHeader title="subscribe" subheader={true} />
+
+Adds a subscription to this relay set.
+
+#### Parameters
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `subscription` | The NDKSubscription object to subscribe to. | `NDKSubscription`
+
+#### Returns
+
+`NDKSubscription`
+
+<SectionHeader title="fromRelayUrls" subheader={true} />
+
+Creates an `NDKRelaySet` from a list of relay URLs.
+
+#### Parameters
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `relayUrls` | The URLs of the relay to connect to. | `string[]`
+| `ndk` | An instance of NDK. | `NDK`
+
+#### Returns
+
+`NDKRelaySet`

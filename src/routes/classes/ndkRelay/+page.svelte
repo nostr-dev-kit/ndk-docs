@@ -4,27 +4,37 @@
 
     let tableOfContents: App.NavLink[] = [
         {
+            title: 'Constructor',
+            url: '#constructor',
+            sublinks: [{ title: 'constructor', url: '#constructor' }]
+        },
+        {
             title: 'Properties',
-            url: '#properties',
+            url: '#Properties',
             sublinks: [
-                { title: 'cacheAdapter', url: '#cacheAdapter' },
-                { title: 'debug', url: '#debug' },
-                { title: 'explicitRelayUrls', url: '#explicitRelayUrls' },
-                { title: 'pool', url: '#pool' },
-                { title: 'signer', url: '#signer' }
+                { title: 'activeSubscriptions', url: '#activeSubscriptions' },
+                { title: 'complaining', url: '#complaining' },
+                { title: 'scores', url: '#scores' },
+                { title: 'url', url: '#pool' }
+            ]
+        },
+        {
+            title: 'Accessors',
+            url: '#accessors',
+            sublinks: [
+                { title: 'connectionStats', url: '#connectionStats' },
+                { title: 'status', url: '#status' }
             ]
         },
         {
             title: 'Methods',
-            url: '#methods',
+            url: '#Methods',
             sublinks: [
-                { title: 'constructor', url: '#constructor' },
-                { title: 'assertSigner', url: '#assertSigner' },
                 { title: 'connect', url: '#connect' },
-                { title: 'fetchEvent', url: '#fetchEvent' },
-                { title: 'fetchEvents', url: '#fetchEvents' },
-                { title: 'getUser', url: '#getUser' },
+                { title: 'disconnect', url: '#disconnect' },
+                { title: 'handleNotice', url: '#handleNotice' },
                 { title: 'publish', url: '#publish' },
+                { title: 'scoreSlowerEvent', url: '#scoreSlowerEvent' },
                 { title: 'subscribe', url: '#subscribe' }
             ]
         }

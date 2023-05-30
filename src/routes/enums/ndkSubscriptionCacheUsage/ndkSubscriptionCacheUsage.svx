@@ -1,0 +1,32 @@
+<script lang='ts'>
+    import SectionHeader from '$lib/components/SectionHeader.svelte'
+</script>
+
+# GetUserParams
+
+<SectionHeader title="Members" />
+
+Defines how NDK should use caching.
+
+| Name | Number |
+| :------ | :----- |
+| `ONLY_CACHE` | `ONLY_CACHE` |
+| `CACHE_FIRST` | `CACHE_FIRST` |
+| `PARALLEL` | `PARALLEL` |
+| `ONLY_RELAY` | `ONLY_RELAY` |
+
+<SectionHeader title="ONLY_CACHE" subheader={true} />
+
+Only use cache, don't subscribe to relays
+
+<SectionHeader title="CACHE_FIRST" subheader={true} />
+
+Use cache, if no matches, use relays
+
+<SectionHeader title="PARALLEL" subheader={true} />
+
+Use cache in addition to relays
+
+<SectionHeader title="ONLY_RELAY" subheader={true} />
+
+Skip cache, don't query it
