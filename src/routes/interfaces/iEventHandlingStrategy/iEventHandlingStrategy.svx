@@ -1,0 +1,24 @@
+<script lang='ts'>
+    import SectionHeader from '$lib/components/SectionHeader.svelte'
+</script>
+
+# IEventHandlingStrategy
+
+
+<SectionHeader title="Methods" />
+
+<SectionHeader title="handle" subheader={true} />
+
+Handles NIP-46 backend events.
+
+#### Parameters
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `backend` | An instance of NDKNip46Backend | `NDKNip46Backend`|
+| `remotePubkey` | The pubkey on the remote backend | `string`|
+| `params` | - | `string[]`|
+
+#### Returns
+
+`Promise<undefined|string>`

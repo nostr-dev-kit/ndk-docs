@@ -1,0 +1,33 @@
+<script lang='ts'>
+    import SectionHeader from '$lib/components/SectionHeader.svelte'
+</script>
+
+# NDKRelayConnectionStats
+
+Information about a specific relay connection.
+
+<SectionHeader title="Properties" />
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `attempts` | The number of times a connection has been attempted | `number` |
+| `connectedAt` | The time the current connection was established in milliseconds | `number` |
+| `durations` | The durations of the last 100 connections in milliseconds | `number[]` |
+| `success` | The number of times a connection has been successfully established | `number` |
+
+
+<SectionHeader title="attempts" subheader={true} />
+
+Should the query skip checking the cache.
+
+<SectionHeader title="conenctedAt" subheader={true} />
+
+The time the current connection was established in milliseconds.
+
+<SectionHeader title="durations" subheader={true} />
+
+The durations of the last 100 connections in milliseconds.
+
+<SectionHeader title="success" subheader={true} />
+
+The number of times a connection has been successfully established.

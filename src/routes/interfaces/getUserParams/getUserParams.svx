@@ -4,10 +4,26 @@
 
 # GetUserParams
 
+`GetUserParams` is the object most often used with instantiating an `NDKUser` object.
+
 <SectionHeader title="Properties" />
 
 <SectionHeader title="hexpubkey" subheader={true} />
-<SectionHeader title="nip05" subheader={true} />
-<SectionHeader title="npub" subheader={true} />
-<SectionHeader title="relayUrls" subheader={true} />
+**Optional:** A user's pubkey in hex format.
 
+`string`
+
+<SectionHeader title="nip05" subheader={true} />
+**Optional:** A user's NIP-05 address. This is currently not supported.
+
+`string`
+
+<SectionHeader title="npub" subheader={true} />
+**Optional:** A user's pubkey in npub format.
+
+`string`
+
+<SectionHeader title="relayUrls" subheader={true} />
+**Optional:** A list of relay urls to use with this user.
+
+`string[]`

@@ -1,0 +1,33 @@
+<script lang='ts'>
+    import SectionHeader from '$lib/components/SectionHeader.svelte'
+</script>
+
+# NDKSubscriptionOptions
+
+Options passed when instantiating an `NDKSubscription`
+
+<SectionHeader title="Properties" />
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `cacheUsage` | How the subscription should use a configured NDKCacheAdapter | `NDKSubscriptionCacheUsage` |
+| `closeOnEose` | Should the subscription close immediately after receiveing EOSE | `boolean` |
+| `groupable` | Should the subscription group queries | `boolean` |
+| `groupableDelay` | The delay to use when grouping subscriptions, specified in milliseconds | `number` |
+
+
+<SectionHeader title="cacheUsage" subheader={true} />
+
+How the subscription should use a configured NDKCacheAdapter
+
+<SectionHeader title="closeOnEose" subheader={true} />
+
+Should the subscription close immediately after receiveing EOSE
+
+<SectionHeader title="groupable" subheader={true} />
+
+Groupable subscriptions are created with a slight time delayed to allow similar filters to be grouped together.
+
+<SectionHeader title="groupableDelay" subheader={true} />
+
+The delay to use when grouping subscriptions, specified in milliseconds. Defaults to `100`.

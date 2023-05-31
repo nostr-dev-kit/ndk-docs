@@ -23,8 +23,8 @@
             { href: '/enums/ndkSubscriptionCacheUsage', linkText: 'NDKSubscriptionCacheUsage' }
         ],
         interfaces: [
-            { href: '/interfaces/getUserParams', linkText: 'getUserParams' },
-            { href: '/interfaces/IEventHandlingStrategy', linkText: 'IEventHandlingStrategy' },
+            { href: '/interfaces/GetUserParams', linkText: 'GetUserParams' },
+            { href: '/interfaces/iEventHandlingStrategy', linkText: 'IEventHandlingStrategy' },
             { href: '/interfaces/ndkCacheAdapter', linkText: 'NDKCacheAdapter' },
             { href: '/interfaces/ndkConstructorParams', linkText: 'NDKConstructorParams' },
             { href: '/interfaces/ndkFilterOptions', linkText: 'NDKFilterOptions' },

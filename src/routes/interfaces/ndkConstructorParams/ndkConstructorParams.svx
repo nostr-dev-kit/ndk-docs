@@ -1,0 +1,38 @@
+<script lang='ts'>
+    import SectionHeader from '$lib/components/SectionHeader.svelte'
+</script>
+
+# NDKConstructorParams
+
+The object passed to a new NDK instance.
+
+<SectionHeader title="Properties" />
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `cacheAdapter` | The cache adapter to use | `NDKCacheAdapter` | `Optional` |
+| `debug` | The debugger to use | `Debugger` | `Optional` |
+| `devWriteRelayUrls` | An array of relay URLs to write to in dev mode | `string[]` | `Optional` |
+| `explicitRelayUrls` | An array of relay URLs to use in production | `string[]` | `Optional` |
+| `signer` | The signer to use | `NDKSigner` | `Optional` |
+
+
+<SectionHeader title="cacheAdapter" subheader={true} />
+
+The cache adapter to use.
+
+<SectionHeader title="debugger" subheader={true} />
+
+The debugger to use.
+
+<SectionHeader title="devWriteRelayUrls" subheader={true} />
+
+An array of relay URLs to write to in dev mode.
+
+<SectionHeader title="explicitRelayUrls" subheader={true} />
+
+An array of relay URLs to use in production.
+
+<SectionHeader title="signer" subheader={true} />
+
+The signer to use.

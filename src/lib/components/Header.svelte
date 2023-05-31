@@ -20,7 +20,7 @@
     <a href="{base}/" class="md:hidden flex flex-row gap-2 items-center text-2xl no-underline">
         <span class="font-extrabold leading-tight">NDK</span>
     </a>
-    <a href="https://github.com/nostr-dev-kit/ndk" target="_blank" class="w-6 h-6">
+    <a href="https://github.com/nostr-dev-kit/ndk" target="_blank" class="w-6 h-6 ml-auto mr-0">
         <GithubIcon />
     </a>
     <DonateButton variant="primary" classes="text-sm hidden md:block" />

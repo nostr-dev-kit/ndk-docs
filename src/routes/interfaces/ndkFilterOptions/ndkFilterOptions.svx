@@ -1,0 +1,18 @@
+<script lang='ts'>
+    import SectionHeader from '$lib/components/SectionHeader.svelte'
+</script>
+
+# NDKFilterOptions
+
+Options passed to an NDKFilter object
+
+<SectionHeader title="Properties" />
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `skipCache` | Should the query skip checking the cache | `boolean` | `Optional` |
+
+
+<SectionHeader title="skipCache" subheader={true} />
+
+Should the query skip checking the cache.

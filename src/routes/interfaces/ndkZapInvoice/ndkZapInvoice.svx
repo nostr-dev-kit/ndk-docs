@@ -1,0 +1,48 @@
+<script lang='ts'>
+    import SectionHeader from '$lib/components/SectionHeader.svelte'
+</script>
+
+# NDKZapInvoice
+
+Represents an Zap Invoice
+
+<SectionHeader title="Properties" />
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `amount` | The amount to be zapped, in satoshis | `number` |
+| `comment` | An optional comment to include in the zap | `string` |
+| `id` | The id of the zap event | `string` |
+| `zapped` | Hex pubkey of the user receiving the zap | `string` |
+| `zappedEvent` | The id of the event being zapped | `string` |
+| `zappee` | The hex pubkey of the user sending the zap | `string` |
+| `zapper` | The hex pubkey of the zapper app. | `string` |
+
+
+<SectionHeader title="amount" subheader={true} />
+
+The amount to be zapped in satoshis.
+
+<SectionHeader title="comment" subheader={true} />
+
+An optional comment to include in the zap.
+
+<SectionHeader title="id" subheader={true} />
+
+The id of the zap event.
+
+<SectionHeader title="zapped" subheader={true} />
+
+The hex pubkey of the user receiving the zap.
+
+<SectionHeader title="zappedEvent" subheader={true} />
+
+The id of the event being zapped.
+
+<SectionHeader title="zappee" subheader={true} />
+
+The hex pubkey of the user sending the zap.
+
+<SectionHeader title="zapper" subheader={true} />
+
+The hex pubkey of the zapper app.

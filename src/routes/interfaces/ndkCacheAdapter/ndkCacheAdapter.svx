@@ -1,0 +1,55 @@
+<script lang='ts'>
+    import SectionHeader from '$lib/components/SectionHeader.svelte'
+</script>
+
+# NDKEvent
+
+The `NDKCacheAdapter` interface represents the way that NDK interacts with various CacheAdapters.
+
+<SectionHeader title="Properties" />
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| [`locking`](#locking) | Whether or not this cache adapter should be queried before or simultaneously with relays | `boolean` |
+
+
+<SectionHeader title="locking" subheader={true} />
+
+Whether this cache adapter is expected to be fast. If this is true, the cache will be queried before the relays. When this is false, the cache will be queried in addition to the relays.
+
+#### Returns
+
+`boolean`
+
+
+<SectionHeader title="Methods" />
+
+| Name | Type |
+| :------ | :----- |
+| [`query`](#query)  | `NostrEvent` |
+| [`setEvent`](#setEvent) | `NostrEvent` |
+
+<SectionHeader title="query" subheader={true} />
+
+#### Parameters
+
+| Name | Type |
+| :------ | :----- | :----- | :----- |
+| `subscription`  | `NDKSubscription` |
+
+#### Returns
+
+`Promise<void>`
+
+<SectionHeader title="setEvent" subheader={true} />
+
+#### Parameters
+
+| Name | Type |
+| :------ | :----- |
+| `event` | `NDKEvent` |
+| `filter` | `Filter` |
+
+#### Returns
+
+`Promise<void>`

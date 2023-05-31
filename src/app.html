@@ -15,14 +15,13 @@
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach((entry) => {
                         const id = entry.target.getAttribute('id');
-                        if (entry.intersectionRatio > 0) {
-                            document
-                                .querySelector(`a.tableOfContentsLink[href="#${id}"]`)
-                                .classList.add('active');
-                        } else {
-                            document
-                                .querySelector(`a.tableOfContentsLink[href="#${id}"]`)
-                                .classList.remove('active');
+                        const elem = document.querySelector(`a.tableOfContentsLink[href="#${id}"]`);
+                        if (elem) {
+                            if (entry.intersectionRatio > 0) {
+                                elem.classList.add('active');
+                            } else {
+                                elem.classList.remove('active');
+                            }
                         }
                     });
                 });

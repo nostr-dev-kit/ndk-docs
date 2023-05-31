@@ -1,16 +1,19 @@
 <script lang="ts">
     import TableOfContents from '$lib/components/TableOfContents.svelte';
-    import MarkdownContent from './GetUserParams.svx';
+    import MarkdownContent from './ndkCacheAdapter.svx';
 
     let tableOfContents: App.NavLink[] = [
         {
             title: 'Properties',
             url: '#Properties',
+            sublinks: [{ title: 'locking', url: '#locking' }]
+        },
+        {
+            title: 'Methods',
+            url: '#Methods',
             sublinks: [
-                { title: 'hexpubkey', url: '#hexpubkey' },
-                { title: 'nip05', url: '#nip05' },
-                { title: 'npub', url: '#npub' },
-                { title: 'relayUrls', url: '#relayUrls' }
+                { title: 'query', url: '#query' },
+                { title: 'setEvent', url: '#setEvent' }
             ]
         }
     ];

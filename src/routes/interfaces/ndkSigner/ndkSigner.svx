@@ -1,0 +1,84 @@
+<script lang='ts'>
+    import SectionHeader from '$lib/components/SectionHeader.svelte'
+</script>
+
+# NDKSigner
+
+Interface for NDKSigners.
+
+<SectionHeader title="Implemented by" />
+
+- [NDKNip07Signer](/classes/ndkNip07Signer)
+- [NDKNip46Signer](/classes/ndkNip46Signer)
+- [NDKPrivateKeySigner](/classes/ndkPrivateKeySigner)
+
+<SectionHeader title="Methods" />
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `blockUntilReady` | Blocks until the signer is ready and returns the associated NDKUser | `Promise<NDKUser>` |
+| `decrypt` | Decrypts a given value from a given sender. | `Promise<string>` |
+| `encrypt` | Encrypts the given Nostr event for the given recipient | `Promise<string>` |
+| `sign` | Sign the given Nostr event | `Promise<string>` |
+| `user` | Getter for the user property | `Promise<NDKUser>` |
+
+
+<SectionHeader title="blockUntilReady" subheader={true} />
+
+Blocks until the signer is ready and returns the associated `NDKUser`.
+
+#### Returns
+
+`Promise<NDKUser>`
+
+<SectionHeader title="decrypt" subheader={true} />
+
+Decrypts a given value from a given sender.
+
+#### Parameters
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `sender` | The sender of the encrypted value | `NDKUser` | `Required` |
+| `value` | The value to be decrypted | `string` | `Required` |
+
+#### Returns
+
+`Promise<string>`
+
+<SectionHeader title="encrypt" subheader={true} />
+
+Encrypts the given Nostr event for the given recipient.
+
+#### Parameters
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `receipient` | The receipt of the encrypted value | `NDKUser` | `Required` |
+| `value` | The value to be encrypted | `string` | `Required` |
+
+#### Returns
+
+`Promise<string>`
+
+<SectionHeader title="sign" subheader={true} />
+
+Sign the given Nostr event
+
+#### Parameters
+
+| Name | Description | Type | Required? |
+| :------ | :----- | :----- | :----- |
+| `event` | The event to sign | `NDKEvent` | `Required` |
+
+#### Returns
+
+`Promise<string>`
+
+<SectionHeader title="user" subheader={true} />
+
+Getter for the user property.
+
+#### Returns
+
+`Promise<NDKUser>`
