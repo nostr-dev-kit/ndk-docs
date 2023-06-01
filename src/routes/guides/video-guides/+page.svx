@@ -1,0 +1,21 @@
+<script lang="ts">
+import SectionHeader from '$lib/components/SectionHeader.svelte'
+import TableOfContents from '$lib/components/TableOfContents.svelte'
+
+let tableOfContents: App.NavLink[] = [
+    { title: "NDK Basics", url: "#NDK-Basics" },
+];
+</script>
+
+<div class="contentWrapper">
+<h1 class="gradientText">Video guides</h1>
+
+We're constantly producing new videos to help you better understand how NDK works. [Check out everything on YouTube](https://www.youtube.com/playlist?list=PLWCXpceoxeCKDo73t6VmtbfE_RjSRxs9p).
+
+<SectionHeader title="NDK Basics" />
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Xzwx21oq8Hk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+</div>
+
+<TableOfContents links={tableOfContents} />

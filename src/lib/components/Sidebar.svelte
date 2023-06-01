@@ -36,7 +36,8 @@
         ],
         guides: [
             { href: '/', linkText: 'Getting started' },
-            { href: '/guides/common-patterns', linkText: 'Common patterns' }
+            { href: '/guides/common-patterns', linkText: 'Common patterns' },
+            { href: '/guides/video-guides', linkText: 'Video guides' }
         ],
         pages: [{ href: 'https://nostr.how', linkText: 'What is Nostr?' }]
     };
