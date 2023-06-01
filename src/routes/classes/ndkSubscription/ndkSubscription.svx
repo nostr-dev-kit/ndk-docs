@@ -141,10 +141,56 @@ A string identifier for the subscription
 
 <SectionHeader title="Methods" />
 
-
-
 <SectionHeader title="eoseReceived" subheader={true} />
+
+Called when an EOSE is received from one of the relays in the group.
+
+#### Parameters
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `relay` | The relay that returned the `EOSE` | `NDKRelay`
+
+#### Returns
+
+`void`
+
 <SectionHeader title="eventReceived" subheader={true} />
+
+Called when an event is received from a relay or the cache.
+
+#### Parameters
+
+| Name | Description | Type |
+| :------ | :----- | :----- |
+| `event` | The event returned | `NDKEvent` |
+| `relay` | The relay that returned the `EOSE` | `NDKRelay\|undefined` |
+| `fromCache` | Wehther the event was returned from the cache | `boolean` |
+
+#### Returns
+
+`void`
+
 <SectionHeader title="groupableId" subheader={true} />
+
+Calculates the groupable ID for the subscription.
+
+#### Returns
+
+`null` | `string`
+
 <SectionHeader title="start" subheader={true} />
+
+Starts the subscription.
+
+#### Returns
+
+`Promise<void>`
+
 <SectionHeader title="stop" subheader={true} />
+
+Stops the subscription.
+
+#### Returns
+
+`Promise<void>`
